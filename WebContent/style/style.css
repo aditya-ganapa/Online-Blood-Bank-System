@@ -1,0 +1,44 @@
+nav {
+	height: 150px;
+	background-color: #2e3493;
+}
+
+img {
+	height: 100px;
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+#login-register-link {
+	background-color: #ffffff;
+	color: #2e3493;
+	text-decoration: none;
+	padding: 10px 20px;
+	float: right;
+	margin-right: 25px;
+	margin-top: 90px;
+	border-radius: 5px;
+}
+
+#login-register-link:hover {
+  background-color: #ef3026;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+section {
+	margin-left: 30px;
+}
+
+div {
+	display: inline-block;
+	width: 100px;
+}
+
+footer {
+	background-color: #bfbfbf;
+	height: 50px;
+}
+background-color: #ef3026; red 
+color: #ffffff; white
+background-color: #2e3493; blue
