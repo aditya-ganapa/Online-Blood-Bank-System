@@ -9,10 +9,16 @@
 <body>
 <nav>
 		<a href="home.html">
-			<img src="images/logo.png" alt="logo">
+			<img src="images/logo.jpg" alt="logo">
 		</a>
-		<a href="login-register.html">
-			<button  id="login-register-link">Login | Register</button>
+		<a href="login-register.jsp">
+			<button  id="login-register-button">Login | Register</button>
+		</a>
+		<a href="tips-on-donating.jsp">
+			<button  id="tips-on-donating-button">Tips on Donating</button>
+		</a>
+		<a href="faq.jsp">
+			<button  id="faq-button">FAQ</button>
 		</a>
 </nav>
 <section>

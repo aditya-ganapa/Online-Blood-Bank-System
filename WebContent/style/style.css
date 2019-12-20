@@ -9,7 +9,7 @@ img {
 	padding-left: 25px;
 }
 
-#login-register-link {
+#login-register-button, #tips-on-donating-button, #faq-button {
 	background-color: #ffffff;
 	color: #2e3493;
 	text-decoration: none;
@@ -20,19 +20,34 @@ img {
 	border-radius: 5px;
 }
 
-#login-register-link:hover {
+#login-register-button:hover, #tips-on-donating-button:hover, #faq-button:hover {
   background-color: #ef3026;
   color: #ffffff;
   cursor: pointer;
 }
 
-section {
-	margin-left: 30px;
-}
-
 div {
 	display: inline-block;
 	width: 100px;
+}
+
+#login-form-block, #registration-form-block {
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+}
+
+input[type=submit] {
+	background-color: #2e3493;
+	color: #ffffff;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+input[type=submit]:hover {
+  background-color: #ef3026;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 footer {
