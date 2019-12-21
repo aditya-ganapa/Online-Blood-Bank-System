@@ -15,85 +15,73 @@ function validateRegistrationForm() {
 	if (firstName.value == "") {
 		firstName.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		firstName.style.border = "";
 	}
 	if (lastName.value == "") {
 		lastName.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		lastName.style.border = "";
 	}
 	if (age.value == "") {
 		age.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		age.style.border = "";
 	}
 	if (gender.value == "") {
 		gender.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		gender.style.border = "";
 	}
 	if (contactNumber.value == "") {
 		contactNumber.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		contactNumber.style.border = "";
 	}
 	if (email.value == "") {
 		email.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		email.style.border = "";
 	}
 	if (password.value == "") {
 		password.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		password.style.border = "";
 	}
 	if (weight.value == "") {
 		weight.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		weight.style.border = "";
 	}
 	if (state.value == "") {
 		state.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		state.style.border = "";
 	}
 	if (area.value == "") {
 		area.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		area.style.border = "";
 	}
 	if (pinCode.value == "") {
 		pinCode.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		pinCode.style.border = "";
 	}
 	if (bloodGroup.value == "") {
 		bloodGroup.style.border = "1px solid red";
 		empty = true;
-	}
-	else {
+	} else {
 		bloodGroup.style.border = "";
 	}
 	if (empty) {
@@ -120,9 +108,6 @@ function validateRegistrationForm() {
 		return false;
 	} else if (!(contactNumber.value.length == 10)) {
 		alert("Invalid Contact Number");
-		return false;
-	}  else if ((password.value.length) > 15) {
-		alert("The password can only be 15 characters long");
 		return false;
 	}  else if ((weight.value.length) > 3 || (weight.value <= 0)) {
 		alert("Please enter valid weight");

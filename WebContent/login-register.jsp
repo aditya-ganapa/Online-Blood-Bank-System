@@ -29,7 +29,7 @@
 			<div>Age</div>: <input type="number" name="age"><br><br>
 			<div>Gender</div>: <select name="gender"><option value=""/><option value="Male">Male</option><option value="Female">Female</option><option value="Female">Other</option></select><br><br>
 			<div>Contact Number</div>: <input name="contactNumber"><br><br>
-			<div>Email</div>: <input name="email"><br><br>
+			<div>Email</div>: <input type="email" name="email"><br><br>
 			<div>Password</div>: <input type="password" name="password"><br><br>
 			<div>Weight</div>: <input type="number" name="weight"><br><br>
 			<div>State</div>: <select name="state"><option value=""/><option value="Karnataka">Karnataka</option></select><br><br>
