@@ -8,9 +8,10 @@ function validateRegistrationForm() {
 	var password = document.forms["registrationForm"]["password"];
 	var weight = document.forms["registrationForm"]["weight"];
 	var state = document.forms["registrationForm"]["state"];
-	var area = document.forms["registrationForm"]["area"];
+	var city = document.forms["registrationForm"]["city"];
 	var pinCode = document.forms["registrationForm"]["pinCode"];
-	var bloodGroup = document.forms["registrationForm"]["bloodGroup"]; 
+	var bloodGroup = document.forms["registrationForm"]["bloodGroup"];
+	var userType = document.forms["registrationForm"]["userType"];
 	var empty = false;
 	if (firstName.value == "") {
 		firstName.style.border = "1px solid red";
@@ -66,11 +67,11 @@ function validateRegistrationForm() {
 	} else {
 		state.style.border = "";
 	}
-	if (area.value == "") {
-		area.style.border = "1px solid red";
+	if (city.value == "") {
+		city.style.border = "1px solid red";
 		empty = true;
 	} else {
-		area.style.border = "";
+		city.style.border = "";
 	}
 	if (pinCode.value == "") {
 		pinCode.style.border = "1px solid red";
@@ -91,31 +92,34 @@ function validateRegistrationForm() {
 	if (!firstName.value.match(/^[a-zA-Z ]+$/)) {
 		alert("Please enter only alphabets in the name fields");
 		return false;
-	}  else if ((firstName.value.length) < 2 || (firstName.value.length) > 50) {
+	} else if ((firstName.value.length) < 2 || (firstName.value.length) > 50) {
 		alert("Your name should have 2 to 50 characters.");
 		return false;
-	}	 else if (!lastName.value.match(/^[a-zA-Z ]+$/)) {
+	} else if (!lastName.value.match(/^[a-zA-Z ]+$/)) {
 		alert("Please enter only alphabets in the name fields");
 		return false;
 	} else if ((lastName.value.length) < 2 || (lastName.value.length) > 50) {
 		alert("Your name should have 2 to 50 characters.");
 		return false;
-	}   else if ((age.value.length) > 3 || (age.value <= 0)) {
+	} else if ((age.value.length) > 3 || (age.value <= 0)) {
 		alert("Please enter valid age");
 		return false;
-	}   else if (isNaN(contactNumber.value)) {
+	} else if (isNaN(contactNumber.value)) {
 		alert("Invalid Contact Number");
 		return false;
 	} else if (!(contactNumber.value.length == 10)) {
 		alert("Invalid Contact Number");
 		return false;
-	}  else if ((weight.value.length) > 3 || (weight.value <= 0)) {
+	} else if ((weight.value.length) > 3 || (weight.value <= 0)) {
 		alert("Please enter valid weight");
 		return false;
-	}   else if (!(pinCode.value.length == 6) || pinCode.value < 0) {
+	} else if (!(pinCode.value.length == 6) || pinCode.value < 0) {
 		alert("Please enter valid pincode");
 		return false;
-	}  else {
+	}  else if ((!userType[0].checked) && (!userType[1].checked)) {
+		alert("Select User Type.");
+		return false;
+	} else {
 		return true;
 	}
 }
@@ -149,4 +153,8 @@ function validateLoginForm() {
 	} else {
 		return true;
 	}
+}
+
+function populateCities(state) {
+	window.location.href = "ShowLoginRegistrationServlet?state="+state;
 }

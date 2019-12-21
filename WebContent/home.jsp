@@ -11,7 +11,7 @@
 		<a href="home.html">
 			<img src="images/logo.jpg" alt="logo">
 		</a>
-		<a href="login-register.jsp">
+		<a href="ShowLoginRegistration">
 			<button  id="login-register-button">Login | Register</button>
 		</a>
 		<a href="tips-on-donating.jsp">

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DuplicateAccountException;
 import dao.UserDao;
 import model.User;
 
@@ -26,13 +27,25 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		int weight = Integer.parseInt(request.getParameter("weight"));
 		String state = request.getParameter("state");
-		String area = request.getParameter("area");
+		String city = request.getParameter("city");
 		int pinCode = Integer.parseInt(request.getParameter("pinCode"));
 		String bloodGroup = request.getParameter("bloodGroup");
-		User user = new User(firstName, lastName, age, gender, contactNumber, email, password, weight, state, area, pinCode, bloodGroup);
+		boolean userType = request.getParameter("userType").equals("Recepient");
+		User user = new User(firstName, lastName, age, gender, contactNumber, email, password, weight, state, city, pinCode, bloodGroup, userType);
 		UserDao userDao = new UserDao();
-		userDao.addUser(user);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-main.jsp");
-		requestDispatcher.forward(request, response);
+		boolean userExists = false;
+		try {
+			userDao.addUser(user);
+		} catch (DuplicateAccountException e) {
+			request.setAttribute("userExistsStatus", true);
+			request.setAttribute("userExistsMessage", "Account already exists with given contact number or email.");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-register.jsp");
+			requestDispatcher.forward(request, response);
+			userExists = true;
+		}
+		if (!userExists) {
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-main.jsp");
+			requestDispatcher.forward(request, response);
+		}
 	}
 }

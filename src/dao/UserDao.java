@@ -8,10 +8,18 @@ import java.sql.SQLException;
 import model.User;
 
 public class UserDao {
-	public void addUser(User user) {
+	public void addUser(User user) throws DuplicateAccountException {
 		Connection connection = ConnectionHandler.getConnection();
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement preparedStatement = connection.prepareStatement("select count(us_contact_number) from user where us_contact_number=? or us_email=?");
+			preparedStatement.setLong(1, user.getContactNumber());
+			preparedStatement.setString(2, user.getEmail());
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			if (resultSet.getInt(1) != 0) {
+				throw new DuplicateAccountException();
+			}
+			preparedStatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
 			preparedStatement.setInt(3, user.getAge());
@@ -21,9 +29,10 @@ public class UserDao {
 			preparedStatement.setString(7, user.getPassword());
 			preparedStatement.setInt(8, user.getWeight());
 			preparedStatement.setString(9, user.getState());
-			preparedStatement.setString(10, user.getArea());
+			preparedStatement.setString(10, user.getCity());
 			preparedStatement.setInt(11, user.getPinCode());
 			preparedStatement.setString(12, user.getBloodGroup());
+			preparedStatement.setBoolean(13, user.isUserType());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

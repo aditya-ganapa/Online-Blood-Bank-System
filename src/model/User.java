@@ -10,14 +10,15 @@ public class User {
 	private String password;
 	private int weight;
 	private String state;
-	private String area;
+	private String city;
 	private int pinCode;
 	private String bloodGroup;
+	private boolean userType;
 	public User() {
 		super();
 	}
 	public User(String firstName, String lastName, int age, String gender, long contactNumber, String email,
-			String password, int weight, String state, String area, int pinCode, String bloodGroup) {
+			String password, int weight, String state, String area, int pinCode, String bloodGroup, boolean userType) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -28,9 +29,10 @@ public class User {
 		this.password = password;
 		this.weight = weight;
 		this.state = state;
-		this.area = area;
+		this.city = area;
 		this.pinCode = pinCode;
 		this.bloodGroup = bloodGroup;
+		this.userType = userType;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -86,11 +88,11 @@ public class User {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getArea() {
-		return area;
+	public String getCity() {
+		return city;
 	}
-	public void setArea(String area) {
-		this.area = area;
+	public void setCity(String city) {
+		this.city = city;
 	}
 	public int getPinCode() {
 		return pinCode;
@@ -103,5 +105,11 @@ public class User {
 	}
 	public void setBloodGroup(String bloodGroup) {
 		this.bloodGroup = bloodGroup;
+	}
+	public boolean isUserType() {
+		return userType;
+	}
+	public void setUserType(boolean userType) {
+		this.userType = userType;
 	}
 }
