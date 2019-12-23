@@ -20,13 +20,19 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		UserDao userDao = new UserDao();
 		if (userDao.validateUser(username, password)) {
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-main.jsp");
-			requestDispatcher.forward(request, response);
+			if(!userDao.getUserType(username)) {
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
+				requestDispatcher.forward(request, response);
+			}
+			else {
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("recepient.jsp");
+				requestDispatcher.forward(request, response);
+			}
 		}
 		else {
 			request.setAttribute("errorStatus", true);
 			request.setAttribute("errorMessage", "Invalid Credentials.");
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-register.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowLoginRegistration");
 			requestDispatcher.forward(request, response);
 		}
 	}

@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 nav {
 	height: 150px;
 	background-color: #2e3493;

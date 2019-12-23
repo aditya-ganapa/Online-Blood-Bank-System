@@ -14,73 +14,73 @@ function validateRegistrationForm() {
 	var userType = document.forms["registrationForm"]["userType"];
 	var empty = false;
 	if (firstName.value == "") {
-		firstName.style.border = "1px solid red";
+		firstName.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		firstName.style.border = "";
 	}
 	if (lastName.value == "") {
-		lastName.style.border = "1px solid red";
+		lastName.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		lastName.style.border = "";
 	}
 	if (age.value == "") {
-		age.style.border = "1px solid red";
+		age.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		age.style.border = "";
 	}
 	if (gender.value == "") {
-		gender.style.border = "1px solid red";
+		gender.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		gender.style.border = "";
 	}
 	if (contactNumber.value == "") {
-		contactNumber.style.border = "1px solid red";
+		contactNumber.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		contactNumber.style.border = "";
 	}
 	if (email.value == "") {
-		email.style.border = "1px solid red";
+		email.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		email.style.border = "";
 	}
 	if (password.value == "") {
-		password.style.border = "1px solid red";
+		password.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		password.style.border = "";
 	}
 	if (weight.value == "") {
-		weight.style.border = "1px solid red";
+		weight.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		weight.style.border = "";
 	}
 	if (state.value == "") {
-		state.style.border = "1px solid red";
+		state.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		state.style.border = "";
 	}
 	if (city.value == "") {
-		city.style.border = "1px solid red";
+		city.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		city.style.border = "";
 	}
 	if (pinCode.value == "") {
-		pinCode.style.border = "1px solid red";
+		pinCode.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		pinCode.style.border = "";
 	}
 	if (bloodGroup.value == "") {
-		bloodGroup.style.border = "1px solid red";
+		bloodGroup.style.border = "1px solid #ef3026";
 		empty = true;
 	} else {
 		bloodGroup.style.border = "";
@@ -90,34 +90,34 @@ function validateRegistrationForm() {
 		return false;
 	}
 	if (!firstName.value.match(/^[a-zA-Z ]+$/)) {
-		alert("Please enter only alphabets in the name fields");
+		alert("Please enter only alphabets in the name fields.");
 		return false;
 	} else if ((firstName.value.length) < 2 || (firstName.value.length) > 50) {
-		alert("Your name should have 2 to 50 characters.");
+		alert("Name should have 2 to 50 characters.");
 		return false;
 	} else if (!lastName.value.match(/^[a-zA-Z ]+$/)) {
-		alert("Please enter only alphabets in the name fields");
+		alert("Please enter only alphabets in the name fields.");
 		return false;
 	} else if ((lastName.value.length) < 2 || (lastName.value.length) > 50) {
-		alert("Your name should have 2 to 50 characters.");
+		alert("Name should have 2 to 50 characters.");
 		return false;
 	} else if ((age.value.length) > 3 || (age.value <= 0)) {
-		alert("Please enter valid age");
+		alert("Please enter valid age.");
 		return false;
 	} else if (isNaN(contactNumber.value)) {
-		alert("Invalid Contact Number");
+		alert("Please enter valid contact number.");
 		return false;
 	} else if (!(contactNumber.value.length == 10)) {
-		alert("Invalid Contact Number");
+		alert("Please enter valid contact number.");
 		return false;
 	} else if ((weight.value.length) > 3 || (weight.value <= 0)) {
-		alert("Please enter valid weight");
+		alert("Please enter valid weight.");
 		return false;
 	} else if (!(pinCode.value.length == 6) || pinCode.value < 0) {
-		alert("Please enter valid pincode");
+		alert("Please enter valid pin code.");
 		return false;
 	}  else if ((!userType[0].checked) && (!userType[1].checked)) {
-		alert("Select User Type.");
+		alert("Please select user type.");
 		return false;
 	} else {
 		return true;
@@ -130,13 +130,13 @@ function validateLoginForm() {
 	var usernameEmpty = false;
 	var passwordEmpty = false;
 	if (username.value == "") {
-		username.style.border = "1px solid red";
+		username.style.border = "1px solid #ef3026";
 		usernameEmpty = true;
 	} else {
 		username.style.border = "";
 	}
 	if (password.value == "") {
-		password.style.border = "1px solid red";
+		password.style.border = "1px solid #ef3026";
 		passwordEmpty = true;
 	} else {
 		password.style.border = "";
@@ -155,6 +155,21 @@ function validateLoginForm() {
 	}
 }
 
+function hideCities() {
+	var allCities = document.getElementsByClassName("city");
+	for (var i = 0; i < allCities.length; i++) {
+		allCities[i].style.display = "none";
+	}
+}
+
 function populateCities(state) {
-	window.location.href = "ShowLoginRegistrationServlet?state="+state;
+	document.getElementById("city").value = "";
+	var allCities = document.getElementsByClassName("city");
+	var requiredCities = document.getElementsByClassName(state);
+	for (var i = 0; i < allCities.length; i++) {
+		allCities[i].style.display = "none";
+	}
+	for (i = 0; i < requiredCities.length; i++) {
+		requiredCities[i].style.display = "";
+	}
 }

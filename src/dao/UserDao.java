@@ -46,6 +46,7 @@ public class UserDao {
 			}
 		}
 	}
+	
 	public boolean validateUser(String username, String password) {
 		Connection connection = ConnectionHandler.getConnection();
 		Long contactNumber = null;
@@ -92,5 +93,53 @@ public class UserDao {
 			}
 		}
 		return valid;
+	}
+	
+	public boolean getUserType(String username) {
+		Connection connection = ConnectionHandler.getConnection();
+		Long contactNumber = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		boolean userType = false;
+		try {
+			contactNumber = Long.parseLong(username);
+		} catch (NumberFormatException e1) {
+			try {
+				preparedStatement = connection.prepareStatement("select us_user_type from user where us_email=?");
+				preparedStatement.setString(1, username);
+				resultSet = preparedStatement.executeQuery();
+				resultSet.next();
+				userType = resultSet.getBoolean(1);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return userType;
+		} 
+		try {
+			preparedStatement = connection.prepareStatement("select us_user_type from user where us_contact_number=?");
+			preparedStatement.setLong(1, contactNumber);
+			resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			userType = resultSet.getBoolean(1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return userType;
 	}
 }

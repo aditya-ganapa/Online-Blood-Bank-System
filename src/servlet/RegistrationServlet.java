@@ -39,13 +39,19 @@ public class RegistrationServlet extends HttpServlet {
 		} catch (DuplicateAccountException e) {
 			request.setAttribute("userExistsStatus", true);
 			request.setAttribute("userExistsMessage", "Account already exists with given contact number or email.");
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-register.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowLoginRegistration");
 			requestDispatcher.forward(request, response);
 			userExists = true;
 		}
 		if (!userExists) {
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("user-main.jsp");
-			requestDispatcher.forward(request, response);
+			if(!userType) {
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
+				requestDispatcher.forward(request, response);
+			}
+			else {
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("recepient.jsp");
+				requestDispatcher.forward(request, response);
+			}
 		}
 	}
 }

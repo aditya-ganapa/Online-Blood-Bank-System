@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>User Main</title>
+	<title>Recepient</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>

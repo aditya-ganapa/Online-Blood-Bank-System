@@ -8,7 +8,7 @@
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body>
+<body onload="hideCities()">
 <nav>
 		<a href="home.jsp">
 			<img src="images/logo.jpg" alt="logo">
@@ -32,8 +32,18 @@
 			<div>Email</div>: <input type="email" name="email"><br><br>
 			<div>Password</div>: <input type="password" name="password"><br><br>
 			<div>Weight</div>: <input type="number" name="weight"><br><br>
-			<div>State</div>: <select name="state"><option value=""/><option value="Karnataka">Karnataka</option></select><br><br>
-			<div>City</div>: <select name="city"><option value=""/><option value="Bangalore">Bangalore</option></select><br><br>
+			<div>State</div>: <select name="state" onchange="populateCities(this.value)">
+									<option value=""/>
+									<c:forEach items="${states}" var="state">
+										<option value="${state}">${state}</option>
+									</c:forEach>
+							</select><br><br>
+			<div>City</div>: <select name="city" id="city">
+								<option value=""/>
+								<c:forEach items="${locations}" var="location">
+										<option class="city ${location.state}" value="${location.city}">${location.city}</option>
+								</c:forEach>
+							</select><br><br>
 			<div>Pin Code</div>: <input type="number" name="pinCode"><br><br>
 			<div>Blood Group</div>: <select name="bloodGroup"><option value=""/><option value="O+">O+</option><option value="O-">O-</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option></select><br><br>
 			<div>User Type</div>: <input type="radio" name="userType" value="Donor"> Donor <input type="radio" name="userType" value="Recepient"> Recepient<br><br>
