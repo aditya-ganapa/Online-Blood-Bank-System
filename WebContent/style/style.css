@@ -35,7 +35,7 @@ div {
 	width: 100px;
 }
 
-#login-form-block, #registration-form-block, #availability-form-block {
+#login-form-block, #registration-form-block, #availability-form-block, #experience-form-block {
 	display: inline-block;
 	width: 49%;
 	text-align: center;

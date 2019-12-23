@@ -173,3 +173,57 @@ function populateCities(state) {
 		requiredCities[i].style.display = "";
 	}
 }
+
+function validateExperienceForm() {
+	var city = document.forms["loginForm"]["city"];
+	var hospital = document.forms["loginForm"]["hospital"];
+	var feedback = document.forms["loginForm"]["feedback"];
+	var empty = false;
+	if (city.value == "") {
+		city.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		city.style.border = "";
+	}
+	if (hospital.value == "") {
+		hospital.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		hospital.style.border = "";
+	}
+	if (feedback.value == "") {
+		feedback.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		feedback.style.border = "";
+	}
+	if (empty) {
+		alert("Please update the highlighted mandatory field(s).");
+		return false;
+	}
+	if(feedback.value.length > 144) {
+		alert("Feedback cannot be more than 144 characters.");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function hideHospitals() {
+	var allHospitals = document.getElementsByClassName("hospital");
+	for (var i = 0; i < allHospitals.length; i++) {
+		allHospitals[i].style.display = "none";
+	}
+}
+
+function populateHospitals(city) {
+	document.getElementById("hospital").value = "";
+	var allHospitals = document.getElementsByClassName("hospital");
+	var requiredHospitals = document.getElementsByClassName(city);
+	for (var i = 0; i < allHospitals.length; i++) {
+		allHospitals[i].style.display = "none";
+	}
+	for (i = 0; i < requiredHospitals.length; i++) {
+		requiredHospitals[i].style.display = "";
+	}
+}
