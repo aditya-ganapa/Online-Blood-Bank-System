@@ -9,7 +9,7 @@
 <body>
 <nav>
 		<a href="home.html">
-			<img src="images/logo.jpg" alt="logo">
+			<img src="images/blood_logo.jpg" alt="logo">
 		</a>
 		<a href="ShowLoginRegistration">
 			<button  id="login-register-button">Login | Register</button>

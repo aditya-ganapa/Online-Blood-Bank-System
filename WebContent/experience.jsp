@@ -25,7 +25,7 @@
 </nav>
 <section>
 	<div id="experience-form-block">
-		<h1>Share your Experience Of Donating Blood and Saving Lives</h1>
+		<h1>Share Experience of Donating Blood and Saving Lives</h1>
 		<form name="experienceForm" onsubmit="return validateExperienceForm()" method="post" action="Experience">
 			<div>City</div>: <select name="city" onchange="populateHospitals(this.value)">
 									<option value=""/>

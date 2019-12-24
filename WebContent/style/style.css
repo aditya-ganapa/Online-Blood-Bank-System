@@ -41,6 +41,23 @@ div {
 	text-align: center;
 }
 
+#requirement-form-block {
+	margin-left: 60px;
+	display: inline-block;
+	width: 49%;
+}
+
+#requirement-table-block {
+	margin-left: 60px;
+	display: inline-block;
+	width: 100%;
+}
+
+#requirement-table {
+	width: 100%;
+	text-align: center;
+}
+
 input[type=submit] {
 	background-color: #2e3493;
 	color: #ffffff;

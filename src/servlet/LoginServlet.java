@@ -21,11 +21,11 @@ public class LoginServlet extends HttpServlet {
 		UserDao userDao = new UserDao();
 		if (userDao.validateUser(username, password)) {
 			if(!userDao.getUserType(username)) {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowDonor");
 				requestDispatcher.forward(request, response);
 			}
 			else {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("recepient.jsp");
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowRecipient");
 				requestDispatcher.forward(request, response);
 			}
 		}

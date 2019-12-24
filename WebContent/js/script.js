@@ -227,3 +227,92 @@ function populateHospitals(city) {
 		requiredHospitals[i].style.display = "";
 	}
 }
+
+function validateRequirementForm() {
+	var state = document.forms["requirementForm"]["state"];
+	var city = document.forms["requirementForm"]["city"];
+	var pinCode = document.forms["requirementForm"]["pinCode"];
+	var bloodGroup = document.forms["requirementForm"]["bloodGroup"];
+	var empty = false;
+	if (state.value == "") {
+		state.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		state.style.border = "";
+	}
+	if (city.value == "") {
+		city.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		city.style.border = "";
+	}
+	if (pinCode.value == "") {
+		pinCode.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		pinCode.style.border = "";
+	}
+	if (bloodGroup.value == "") {
+		bloodGroup.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		bloodGroup.style.border = "";
+	}
+	if (empty) {
+		alert("Please update the highlighted mandatory field(s).");
+		return false;
+	}
+	if((pinCode.value.length != 6) || (pinCode.value < 0)) {
+		alert("Please enter valid pin code.");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function slotUnavailableAlert() {
+	alert("Slot Unavailable.");
+	return false;
+}
+
+function validateAvailabilityForm() {
+	var state = document.forms["availabilityForm"]["state"];
+	var city = document.forms["availabilityForm"]["city"];
+	var pinCode = document.forms["availabilityForm"]["pinCode"];
+	var bloodGroup = document.forms["availabilityForm"]["bloodGroup"];
+	var empty = false;
+	if (state.value == "") {
+		state.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		state.style.border = "";
+	}
+	if (city.value == "") {
+		city.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		city.style.border = "";
+	}
+	if (pinCode.value == "") {
+		pinCode.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		pinCode.style.border = "";
+	}
+	if (bloodGroup.value == "") {
+		bloodGroup.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		bloodGroup.style.border = "";
+	}
+	if (empty) {
+		alert("Please update the highlighted mandatory field(s).");
+		return false;
+	}
+	if((pinCode.value.length != 6) || (pinCode.value < 0)) {
+		alert("Please enter valid pin code.");
+		return false;
+	} else {
+		return true;
+	}
+}

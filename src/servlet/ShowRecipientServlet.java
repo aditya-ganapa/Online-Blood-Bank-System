@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import dao.LocationDao;
 import model.Location;
 
-@WebServlet("/ShowReceipientServlet")
-public class ShowReceipientServlet extends HttpServlet {
+@WebServlet("/ShowRecipient")
+public class ShowRecipientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LocationDao locationDao = new LocationDao();
 		ArrayList<Location> locations = new ArrayList<>();
@@ -25,7 +25,7 @@ public class ShowReceipientServlet extends HttpServlet {
 		states = locationDao.getAllStates();
 		request.setAttribute("locations", locations);
 		request.setAttribute("states", states);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("recipient-availability.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("recipient.jsp");
 		requestDispatcher.forward(request, response);
 	}
 	
