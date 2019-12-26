@@ -332,3 +332,28 @@ function validateAvailabilityForm() {
 		return true;
 	}
 }
+
+function validateQueryForm() {
+	var query = document.forms["queryForm"]["query"];
+	if (query.value == "") {
+		alert("You haven't entered any query.");
+		return false;
+	} else if (query.value.length > 144) {
+		alert("Query can't be more than 144 characters long.");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function hideQueryBlock() {
+	var queryBlock = document.getElementById("query-block");
+	queryBlock.style.display = "none";
+}
+
+function showQueryBlock() {
+	var queryBlock = document.getElementById("query-block");
+	queryBlock.style.display = "";
+	var raiseQueryButton = document.getElementById("raise-query-button");
+	raiseQueryButton.style.display = "none";
+}

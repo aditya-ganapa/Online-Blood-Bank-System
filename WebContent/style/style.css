@@ -136,7 +136,7 @@ textarea {
 	height: 150px;
 }
 
-input[type=submit], #post-button {
+input[type=submit], #post-button, #raise-query-button {
 	
 
 	padding: 10px 20px;
@@ -146,7 +146,7 @@ input[type=submit], #post-button {
 	color: #ff4d4d;
 }
 
-input[type=submit]:hover, #post-button:hover {
+input[type=submit]:hover, #post-button:hover, #raise-query-button:hover {
   background-color: #ef3026;
   color: #ffffff;
   cursor: pointer;
@@ -166,6 +166,20 @@ input[type=submit]:hover, #post-button:hover {
 #faq {
 	margin-left: 60px;
 	margin-right: 60px;
+}
+
+#raise-query-button-block {
+	text-align: center;
+}
+
+#query-block {
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+}
+
+#query-textarea {
+	width: 100%;
 }
 
 footer {

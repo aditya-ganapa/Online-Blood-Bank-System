@@ -6,7 +6,7 @@
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body>
+<body onload="hideQueryBlock()">
 <nav>
 		<a href="home.jsp">
 			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
@@ -56,6 +56,15 @@ B Rh-negative ---   2 percent <br>
 AB Rh-positive ---  4 percent <br>
 AB Rh-negative --- 1 percent</p>
 <p>In an emergency, anyone can receive type O red blood cells. Therefore, people with type O blood are known as "universal blood donors." In addition, individuals with AB type plasma are the universal plasma donors.</p>
+</div>
+<div id="raise-query-button-block">
+	<button id="raise-query-button" onclick="showQueryBlock()">Raise A Query</button>
+</div>
+<div id="query-block">
+	<form name="queryForm" onsubmit="return validateQueryForm()" method="post" action="Query">
+		<textarea name="query" id="query-textarea"></textarea><br><br>
+		<input type="submit" name="submit" value="Submit Query"><br><br>
+	</form>
 </div>
 </section>
 <footer style="position: relative;">
