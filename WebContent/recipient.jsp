@@ -11,39 +11,54 @@
 <body  onload="hideCities()">
 <nav>
 		<a href="home.jsp">
-			<img src="images/logo.jpg" alt="logo">
+			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
 		</a>
+		<div id="sitename">UPKAAR</div>
 		<a href="home.jsp">
 			<button  id="logout-button">Logout</button>
-		</a>
-		<a href="faq.jsp">
-			<button  id="faq-button">FAQ</button>
 		</a>
 </nav>
 <section>
 	<div id="availability-form-block">
-		<h1>Search Blood Availability</h1>
+		<h2>Search Blood Availability</h2>
 		<form name="availabilityForm" onsubmit="return validateAvailabilityForm()" method="post" action="RecipientServlet">
-			<div>State</div>: <select name="state" onchange="populateCities(this.value)">
+			<div class="form-field-name">State</div>: <select name="state" onchange="populateCities(this.value)">
 									<option value=""/>
 									<c:forEach items="${states}" var="state">
 										<option value="${state}">${state}</option>
 									</c:forEach>
 							</select><br><br>
-			<div>City</div>: <select name="city" id="city">
+			<div class="form-field-name">City</div>: <select name="city" id="city">
 								<option value=""/>
 								<c:forEach items="${locations}" var="location">
 										<option class="city ${location.state}" value="${location.city}">${location.city}</option>
 								</c:forEach>
 							</select><br><br>
-			<div>Pin Code</div>: <input type="number" name="pinCode"><br><br>
-			<div>Blood Group</div>: <select name="bloodGroup"><option value=""/><option value="O+">O+</option><option value="O-">O-</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option></select><br><br>
-			<input type="submit" name="submit" value="Search">
+			<div class="form-field-name">Pin Code</div>: <input type="number" name="pinCode"><br><br>
+			<div class="form-field-name">Blood Group</div>: <select name="bloodGroup"><option value=""/><option value="O+">O+</option><option value="O-">O-</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option></select><br><br>
+			<div class="form-field-name">Contact Number</div>: <input type="text" name="contactNumber"><br><br>
+			<input type="submit" name="submit" value="Search"><br><br>
 		</form>
 	</div>
+	<c:if test="${availablesStatus}">
+	<div id="availability-list-block">
+		<h3>Required Blood Type Is Available In Following Hospitals In Your Area:</h3>
+		<c:forEach items="${availables}" var="available">
+			${available.hospital}<br>
+		</c:forEach>
+	</div>
+	</c:if>
+	<c:if test="${emptyAvailablesStatus}">
+		<div id="no-availability-block">
+		<h3>Required Blood Type Is Not Available In Your Area. Do You Want To Post Your Requirement ?</h3>
+		<a href="PostRequirement?state=${available.state}&city=${available.city}&pinCode=${available.pinCode}&bloodGroup=${available.bloodGroup}&contactNumber=${contactNumber}">
+			<button id="post-button">Post</button>
+		</a>
+	</div>
+	</c:if>
 </section>
 <footer>
-	<p>Copyright &copy; 2019</p>
+	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>
 </body>
 </html>

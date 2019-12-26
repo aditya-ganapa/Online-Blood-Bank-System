@@ -4,10 +4,10 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Slot Notification</title>
+	<title>Post Notification</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<meta http-equiv="refresh" content="3; url = ShowDonor"/>
+	<meta http-equiv="refresh" content="3; url = ShowRecipient"/>
 </head>
 <body>
 <nav>
@@ -21,8 +21,8 @@
 </nav>
 <section>
 	<div class="notification-block">
-	<h2>Slot Booking Status</h2>
-	<p>Slot Booked Successfully, You Are Going To Save A Life.</p>
+	<h2>Requirement Posting Status</h2>
+	<p>Your Requirement Has Been Posted Successfully.</p>
 	</div>
 </section>
 <footer>

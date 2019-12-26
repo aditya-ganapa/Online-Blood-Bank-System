@@ -30,7 +30,7 @@ public class RegistrationServlet extends HttpServlet {
 		String city = request.getParameter("city");
 		int pinCode = Integer.parseInt(request.getParameter("pinCode"));
 		String bloodGroup = request.getParameter("bloodGroup");
-		boolean userType = request.getParameter("userType").equals("Recepient");
+		boolean userType = request.getParameter("userType").equals("Recipient");
 		User user = new User(firstName, lastName, age, gender, contactNumber, email, password, weight, state, city, pinCode, bloodGroup, userType);
 		UserDao userDao = new UserDao();
 		boolean userExists = false;
@@ -45,11 +45,15 @@ public class RegistrationServlet extends HttpServlet {
 		}
 		if (!userExists) {
 			if(!userType) {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowDonor");
+				request.setAttribute("donorRegisteredStatus", true);
+				request.setAttribute("donorRegisteredMessage", "You have been successfully registered as a Donor.");
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowLoginRegistration");
 				requestDispatcher.forward(request, response);
 			}
 			else {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowRecipient");
+				request.setAttribute("recipientRegisteredStatus", true);
+				request.setAttribute("recipientRegisteredMessage", "You have been successfully registered as a Recipient.");
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowLoginRegistration");
 				requestDispatcher.forward(request, response);
 			}
 		}

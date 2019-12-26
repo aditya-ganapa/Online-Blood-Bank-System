@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BookSlotDao;
-import model.BookSlot;
+import dao.PostRequirementDao;
+import model.PostRequirement;
 
-@WebServlet("/BookSlot")
-public class BookSlotServlet extends HttpServlet {
+@WebServlet("/PostRequirement")
+public class PostRequirementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String hospital = request.getParameter("hospital");
-		String date = request.getParameter("date");
-		String slot = request.getParameter("slot");
+		String state = request.getParameter("state");
+		String city = request.getParameter("city");
+		int pinCode = Integer.parseInt(request.getParameter("pinCode"));
+		String bloodGroup = request.getParameter("bloodGroup");
 		long contactNumber = Long.parseLong(request.getParameter("contactNumber"));
-		BookSlotDao bookSlotDao = new BookSlotDao();
-		bookSlotDao.book(new BookSlot(hospital, date, slot, contactNumber));
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("slot-notification.jsp");
+		PostRequirementDao postRequirementDao = new PostRequirementDao();
+		postRequirementDao.post(new PostRequirement(state, city, pinCode, bloodGroup, contactNumber));
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("post-notification.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

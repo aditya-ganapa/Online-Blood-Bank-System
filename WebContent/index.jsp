@@ -10,7 +10,8 @@
 <nav>
 		<a href="home.jsp">
 			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
-		</a><div id="sitename">UPKAAR</div>
+		</a>
+		<div id="sitename">UPKAAR</div>
 		<a href="ShowLoginRegistration">
 			<button  id="login-register-button">Login | Register</button>
 		</a>
@@ -22,7 +23,7 @@
 		</a>
 </nav>
 <div class="grid-container">
-<div class="left"><img src="111.png" alt="drop" id="img1"></div>
+<div class="left"><img src="111.png" alt="drop" id=img1></div>
 <div class="middle">
 <section>
 <div id="home">

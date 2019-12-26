@@ -23,9 +23,9 @@ public class AvailableDao {
 			if(!resultSet.next()) {
 				throw new EmptyAvailableException();
 			}
-			availables.add(new Available(resultSet.getString(1)));
+			availables.add(new Available(state, city, pinCode, resultSet.getString(1), bloodGroup));
 			while (resultSet.next()) {
-				availables.add(new Available(resultSet.getString(1)));
+				availables.add(new Available(state, city, pinCode, resultSet.getString(1), bloodGroup));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

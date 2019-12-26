@@ -4,13 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 import model.Requirement;
 
 public class RequirementDao {
-	public ArrayList<Requirement> getAllRequirements(String state, String city, int pinCode, String bloodGroup) throws EmptyRequirementsException, ParseException {
+	public ArrayList<Requirement> getAllRequirements(String state, String city, int pinCode, String bloodGroup) throws EmptyRequirementsException {
 		Connection connection = ConnectionHandler.getConnection();
 		ArrayList<Requirement> requirements = new ArrayList<>();
 		PreparedStatement preparedStatement;

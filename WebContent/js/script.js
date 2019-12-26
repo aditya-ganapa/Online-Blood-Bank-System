@@ -86,38 +86,41 @@ function validateRegistrationForm() {
 		bloodGroup.style.border = "";
 	}
 	if (empty) {
-		alert("Please update the highlighted mandatory field(s).");
+		alert("Please Update The Highlighted Mandatory Field(s).");
 		return false;
 	}
 	if (!firstName.value.match(/^[a-zA-Z ]+$/)) {
-		alert("Please enter only alphabets in the name fields.");
+		alert("Please Enter Only Alphabets In The Name Fields.");
 		return false;
 	} else if ((firstName.value.length) < 2 || (firstName.value.length) > 50) {
-		alert("Name should have 2 to 50 characters.");
+		alert("Name Should Have 2 To 50 Characters.");
 		return false;
 	} else if (!lastName.value.match(/^[a-zA-Z ]+$/)) {
-		alert("Please enter only alphabets in the name fields.");
+		alert("Please Enter Only Alphabets In The Name Fields.");
 		return false;
 	} else if ((lastName.value.length) < 2 || (lastName.value.length) > 50) {
-		alert("Name should have 2 to 50 characters.");
+		alert("Name Should Have 2 To 50 Characters.");
 		return false;
 	} else if ((age.value.length) > 3 || (age.value <= 0)) {
-		alert("Please enter valid age.");
+		alert("Please Enter Valid Age.");
 		return false;
 	} else if (isNaN(contactNumber.value)) {
-		alert("Please enter valid contact number.");
+		alert("Please Enter Valid Contact Number.");
 		return false;
 	} else if (!(contactNumber.value.length == 10)) {
-		alert("Please enter valid contact number.");
+		alert("Please Enter Valid Contact Number.");
 		return false;
 	} else if ((weight.value.length) > 3 || (weight.value <= 0)) {
-		alert("Please enter valid weight.");
+		alert("Please Enter Valid Weight.");
 		return false;
 	} else if (!(pinCode.value.length == 6) || pinCode.value < 0) {
-		alert("Please enter valid pin code.");
+		alert("Please Enter Valid Pin Code.");
 		return false;
 	}  else if ((!userType[0].checked) && (!userType[1].checked)) {
-		alert("Please select user type.");
+		alert("Please Select User Type.");
+		return false;
+	} else if (password.value.length < 7) {
+		alert("Password Is Weak.");
 		return false;
 	} else {
 		return true;
@@ -175,9 +178,9 @@ function populateCities(state) {
 }
 
 function validateExperienceForm() {
-	var city = document.forms["loginForm"]["city"];
-	var hospital = document.forms["loginForm"]["hospital"];
-	var feedback = document.forms["loginForm"]["feedback"];
+	var city = document.forms["experienceForm"]["city"];
+	var hospital = document.forms["experienceForm"]["hospital"];
+	var feedback = document.forms["experienceForm"]["feedback"];
 	var empty = false;
 	if (city.value == "") {
 		city.style.border = "1px solid #ef3026";
@@ -280,6 +283,7 @@ function validateAvailabilityForm() {
 	var city = document.forms["availabilityForm"]["city"];
 	var pinCode = document.forms["availabilityForm"]["pinCode"];
 	var bloodGroup = document.forms["availabilityForm"]["bloodGroup"];
+	var contactNumber = document.forms["availabilityForm"]["contactNumber"];
 	var empty = false;
 	if (state.value == "") {
 		state.style.border = "1px solid #ef3026";
@@ -305,12 +309,24 @@ function validateAvailabilityForm() {
 	} else {
 		bloodGroup.style.border = "";
 	}
+	if (contactNumber.value == "") {
+		contactNumber.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		contactNumber.style.border = "";
+	}
 	if (empty) {
 		alert("Please update the highlighted mandatory field(s).");
 		return false;
 	}
 	if((pinCode.value.length != 6) || (pinCode.value < 0)) {
 		alert("Please enter valid pin code.");
+		return false;
+	} else if (isNaN(contactNumber.value)) {
+		alert("Please enter valid contact number.");
+		return false;
+	} else if (!(contactNumber.value.length == 10)) {
+		alert("Please enter valid contact number.");
 		return false;
 	} else {
 		return true;
