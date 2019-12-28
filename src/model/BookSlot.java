@@ -4,16 +4,16 @@ public class BookSlot {
 	private String hospital;
 	private String date;
 	private String slot;
-	private long contactNumber;
+	private int userId;
 	public BookSlot() {
 		super();
 	}
-	public BookSlot(String hospital, String date, String slot, long contactNumber) {
+	public BookSlot(String hospital, String date, String slot, int userId) {
 		super();
 		this.hospital = hospital;
 		this.date = date;
 		this.slot = slot;
-		this.contactNumber = contactNumber;
+		this.userId = userId;
 	}
 	public String getHospital() {
 		return hospital;
@@ -33,10 +33,10 @@ public class BookSlot {
 	public void setSlot(String slot) {
 		this.slot = slot;
 	}
-	public long getContactNumber() {
-		return contactNumber;
+	public int getUserId() {
+		return userId;
 	}
-	public void setContactNumber(long contactNumber) {
-		this.contactNumber = contactNumber;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }

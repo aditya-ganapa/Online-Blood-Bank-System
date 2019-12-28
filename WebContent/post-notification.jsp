@@ -7,15 +7,15 @@
 	<title>Post Notification</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<meta http-equiv="refresh" content="3; url = ShowRecipient"/>
+	<meta http-equiv="refresh" content="3; url = ShowRecipient?userId=${userId}"/>
 </head>
 <body>
 <nav>
-		<a href="home.jsp">
+		<a href="ShowRecipient?userId=${userId}">
 			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
 		</a>
 		<div id="sitename">UPKAAR</div>
-		<a href="home.jsp">
+		<a href="ShowHome">
 			<button  id="logout-button">Logout</button>
 		</a>
 </nav>

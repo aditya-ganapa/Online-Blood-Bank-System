@@ -13,14 +13,14 @@ public class User {
 	private String city;
 	private int pinCode;
 	private String bloodGroup;
-	private boolean userType;
+/*	private boolean userType;*/
 	
 	public User() {
 		super();
 	}
 	
 	public User(String firstName, String lastName, int age, String gender, long contactNumber, String email,
-			String password, int weight, String state, String area, int pinCode, String bloodGroup, boolean userType) {
+			String password, int weight, String state, String area, int pinCode, String bloodGroup) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -34,7 +34,7 @@ public class User {
 		this.city = area;
 		this.pinCode = pinCode;
 		this.bloodGroup = bloodGroup;
-		this.userType = userType;
+/*		this.userType = userType;*/
 	}
 	
 	public String getFirstName() {
@@ -133,11 +133,11 @@ public class User {
 		this.bloodGroup = bloodGroup;
 	}
 	
-	public boolean isUserType() {
+/*	public boolean isUserType() {
 		return userType;
 	}
 	
 	public void setUserType(boolean userType) {
 		this.userType = userType;
-	}
+	}*/
 }

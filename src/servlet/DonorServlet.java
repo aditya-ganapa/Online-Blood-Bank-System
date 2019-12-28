@@ -27,27 +27,43 @@ public class DonorServlet extends HttpServlet {
 		String city = request.getParameter("city");
 		int pinCode = Integer.parseInt(request.getParameter("pinCode"));
 		String bloodGroup = request.getParameter("bloodGroup");
-		boolean empty = false;
+		boolean emptyRequirements = false;
+		boolean emptyBloodBanks = false;
 		LocationDao locationDao = new LocationDao();
 		ArrayList<Location> locations = new ArrayList<>();
 		ArrayList<String> states = new ArrayList<>();
 		locations = locationDao.getAllStatesAndCities();
 		states = locationDao.getAllStates();
 		request.setAttribute("locations", locations);
-		request.setAttribute("states", states);		
+		request.setAttribute("states", states);
+		
+		request.setAttribute("userId", request.getParameter("userId"));
+		
+		ArrayList<Requirement> bloodBanks = new ArrayList<>();
 		
 		try {
-			requirements = requirementDao.getAllRequirements(state, city, pinCode, bloodGroup);
+			requirements = requirementDao.getRequirements(state, city, pinCode, bloodGroup);
 		} catch (EmptyRequirementsException e) {
-			request.setAttribute("noRequirementsStatus", true);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
-			requestDispatcher.forward(request, response);
-			empty = true;
+			emptyRequirements = true;
+			try {
+				bloodBanks = requirementDao.getAllBloodBanks(city);
+			} catch (EmptyRequirementsException e1) {
+				emptyBloodBanks = true;
+				request.setAttribute("noBloodBanksStatus", true);
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
+				requestDispatcher.forward(request, response);
+			}
+			if(!emptyBloodBanks) {
+				request.setAttribute("noRequirementsStatus", true);
+				request.setAttribute("bloodBanks", bloodBanks);
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
+				requestDispatcher.forward(request, response);
+				emptyRequirements = true;
+			}
 		}
-		if(!empty) {
+		if(!emptyRequirements) {
 			request.setAttribute("requirementsStatus", true);
 			request.setAttribute("requirements", requirements);
-			request.setAttribute("contactNumber", request.getParameter("contactNumber"));
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("donor.jsp");
 			requestDispatcher.forward(request, response);
 		}

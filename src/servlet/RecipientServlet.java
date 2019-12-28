@@ -37,6 +37,8 @@ public class RecipientServlet extends HttpServlet {
 		request.setAttribute("locations", locations);
 		request.setAttribute("states", states);
 		
+		request.setAttribute("userId", request.getParameter("userId"));
+		
 		try {
 			availables = availableDao.getAllAvailable(state, city, pinCode, bloodGroup);
 		} catch (EmptyAvailableException e) {

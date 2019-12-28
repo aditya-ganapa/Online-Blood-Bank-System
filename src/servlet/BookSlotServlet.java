@@ -20,9 +20,12 @@ public class BookSlotServlet extends HttpServlet {
 		String hospital = request.getParameter("hospital");
 		String date = request.getParameter("date");
 		String slot = request.getParameter("slot");
-		long contactNumber = Long.parseLong(request.getParameter("contactNumber"));
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		BookSlotDao bookSlotDao = new BookSlotDao();
-		bookSlotDao.book(new BookSlot(hospital, date, slot, contactNumber));
+		bookSlotDao.book(new BookSlot(hospital, date, slot, userId));
+		
+		request.setAttribute("userId", userId);
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("slot-notification.jsp");
 		requestDispatcher.forward(request, response);
 	}

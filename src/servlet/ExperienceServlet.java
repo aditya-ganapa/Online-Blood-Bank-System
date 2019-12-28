@@ -20,8 +20,12 @@ public class ExperienceServlet extends HttpServlet {
 		String city = request.getParameter("city");
 		String hospital = request.getParameter("hospital");
 		String feedback = request.getParameter("feedback");
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		ExperienceDao experienceDao = new ExperienceDao();
-		experienceDao.add(new Experience(city, hospital, feedback));
+		experienceDao.add(new Experience(city, hospital, feedback, userId));
+		
+		request.setAttribute("userId", userId);
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("experience-notification.jsp");
 		requestDispatcher.forward(request, response);
 	}

@@ -5,17 +5,17 @@ public class PostRequirement {
 	private String city;
 	private int pinCode;
 	private String bloodGroup;
-	private long contactNumber;
+	private int userId;
 	public PostRequirement() {
 		super();
 	}
-	public PostRequirement(String state, String city, int pinCode, String bloodGroup, long contactNumber) {
+	public PostRequirement(String state, String city, int pinCode, String bloodGroup, int userId) {
 		super();
 		this.state = state;
 		this.city = city;
 		this.pinCode = pinCode;
 		this.bloodGroup = bloodGroup;
-		this.contactNumber = contactNumber;
+		this.userId = userId;
 	}
 	public String getState() {
 		return state;
@@ -41,10 +41,10 @@ public class PostRequirement {
 	public void setBloodGroup(String bloodGroup) {
 		this.bloodGroup = bloodGroup;
 	}
-	public long getContactNumber() {
-		return contactNumber;
+	public int getUserId() {
+		return userId;
 	}
-	public void setContactNumber(long contactNumber) {
-		this.contactNumber = contactNumber;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }

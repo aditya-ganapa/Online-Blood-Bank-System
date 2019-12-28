@@ -67,7 +67,7 @@ AB Rh-negative --- 1 percent</p>
 	</form>
 </div>
 </section>
-<footer style="position: relative;">
+<footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>
 </body>

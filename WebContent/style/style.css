@@ -91,12 +91,12 @@ navsa {
 	font-size: 25px;
 }
 
-#requirement-form-block, #availability-form-block, #experience-form-block {
+#requirement-form-block, #availability-form-block, #experience-form-block, #no-requirements-button-block {
 	font-size: 25px;
 	text-align: center;
 }
 
-#requirement-table-block, #availability-list-block, #no-availability-block {
+#requirement-table-block, #availability-list-block, #no-availability-block, #blood-banks-table-block {
 	margin-left: 60px;
 	font-size: 25px;
 }
@@ -105,14 +105,17 @@ navsa {
 	text-align: center;
 }
 
-#requirement-table {
+#home-requirement-table-block, #home-experience-block {
+	font-size: 25px;
+}
+
+#requirement-table, #blood-banks-table, #home-requirement-table {
 	width: 100%;
 	text-align: center;
 }
 
 th, td {
 	height: 30px;
-
 }
 
 .notification-block {
@@ -136,7 +139,7 @@ textarea {
 	height: 150px;
 }
 
-input[type=submit], #post-button, #raise-query-button {
+input[type=submit], #post-button, #raise-query-button, #show-all-blood-banks-button {
 	
 
 	padding: 10px 20px;
@@ -146,7 +149,7 @@ input[type=submit], #post-button, #raise-query-button {
 	color: #ff4d4d;
 }
 
-input[type=submit]:hover, #post-button:hover, #raise-query-button:hover {
+input[type=submit]:hover, #post-button:hover, #raise-query-button:hover, #show-all-blood-banks-button:hover, #Adminbutton:hover {
   background-color: #ef3026;
   color: #ffffff;
   cursor: pointer;
@@ -185,7 +188,7 @@ input[type=submit]:hover, #post-button:hover, #raise-query-button:hover {
 footer {
 	background-color:#ff4d4d;
 	height: 50px;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -193,6 +196,33 @@ footer {
 	color: white;
 	font-size: 20px;
 }
+
+#Adminbutton{
+
+background-color: #ffffff;
+
+       border: 10px solid #ff4d4d;
+
+color:#ff4d4d;
+
+  padding: 60px 70px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  margin-top:90px;
+
+  margin-left:220px;
+
+  margin-right:40px;
+
+  display: inline-block;
+
+  font-size: 16px;
+
+}
+
 
 background-color: #ef3026; red 
 color: #ffffff; white

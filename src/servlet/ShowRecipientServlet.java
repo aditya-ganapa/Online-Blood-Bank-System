@@ -25,6 +25,14 @@ public class ShowRecipientServlet extends HttpServlet {
 		states = locationDao.getAllStates();
 		request.setAttribute("locations", locations);
 		request.setAttribute("states", states);
+		
+		if (request.getParameter("userId") == null) {
+			request.setAttribute("userId", request.getAttribute("userId"));
+		}
+		else {
+			request.setAttribute("userId", request.getParameter("userId"));
+		}
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("recipient.jsp");
 		requestDispatcher.forward(request, response);
 	}

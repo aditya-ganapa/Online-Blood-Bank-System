@@ -1,19 +1,21 @@
 package model;
 
-public class Experience {
+public class ExperienceHome {
 	private String city;
 	private String hospital;
 	private String feedback;
-	private int userId;
-	public Experience() {
+	private String firstName;
+	private String lastName;
+	public ExperienceHome() {
 		super();
 	}
-	public Experience(String city, String hospital, String feedback, int userId) {
+	public ExperienceHome(String city, String hospital, String feedback, String firstName, String lastName) {
 		super();
 		this.city = city;
 		this.hospital = hospital;
 		this.feedback = feedback;
-		this.userId = userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 	public String getCity() {
 		return city;
@@ -33,10 +35,16 @@ public class Experience {
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
-	public int getUserId() {
-		return userId;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }

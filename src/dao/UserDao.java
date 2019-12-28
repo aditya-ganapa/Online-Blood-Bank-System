@@ -19,7 +19,7 @@ public class UserDao {
 			if (resultSet.getInt(1) != 0) {
 				throw new DuplicateAccountException();
 			}
-			preparedStatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			preparedStatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?)");
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
 			preparedStatement.setInt(3, user.getAge());
@@ -32,7 +32,7 @@ public class UserDao {
 			preparedStatement.setString(10, user.getCity());
 			preparedStatement.setInt(11, user.getPinCode());
 			preparedStatement.setString(12, user.getBloodGroup());
-			preparedStatement.setBoolean(13, user.isUserType());
+/*			preparedStatement.setBoolean(13, user.isUserType());*/
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -141,5 +141,52 @@ public class UserDao {
 			}
 		}
 		return userType;
+	}
+	public int getUserId(String username) {
+		Connection connection = ConnectionHandler.getConnection();
+		Long contactNumber = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		int userId = 0;
+		try {
+			contactNumber = Long.parseLong(username);
+		} catch (NumberFormatException e1) {
+			try {
+				preparedStatement = connection.prepareStatement("select us_user_id from user where us_email=?");
+				preparedStatement.setString(1, username);
+				resultSet = preparedStatement.executeQuery();
+				resultSet.next();
+				userId = resultSet.getInt(1);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return userId;
+		} 
+		try {
+			preparedStatement = connection.prepareStatement("select us_user_id from user where us_contact_number=?");
+			preparedStatement.setLong(1, contactNumber);
+			resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			userId = resultSet.getInt(1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return userId;
 	}
 }

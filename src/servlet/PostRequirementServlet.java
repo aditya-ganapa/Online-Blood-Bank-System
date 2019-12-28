@@ -20,10 +20,13 @@ public class PostRequirementServlet extends HttpServlet {
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
 		int pinCode = Integer.parseInt(request.getParameter("pinCode"));
-		String bloodGroup = request.getParameter("bloodGroup");
-		long contactNumber = Long.parseLong(request.getParameter("contactNumber"));
+		String bloodGroup = request.getParameter("bloodGroup").replace(' ', '+');
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		PostRequirementDao postRequirementDao = new PostRequirementDao();
-		postRequirementDao.post(new PostRequirement(state, city, pinCode, bloodGroup, contactNumber));
+		postRequirementDao.post(new PostRequirement(state, city, pinCode, bloodGroup, userId));
+		
+		request.setAttribute("userId", userId);
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("post-notification.jsp");
 		requestDispatcher.forward(request, response);
 	}

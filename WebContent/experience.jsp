@@ -10,21 +10,21 @@
 </head>
 <body onload="hideHospitals()">
 <nav>
-		<a href="home.jsp">
+		<a href="ShowDonor?userId=${userId}">
 			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
 		</a>
 		<div id="sitename">UPKAAR</div>
-		<a href="home.jsp">
+		<a href="ShowHome">
 			<button  id="logout-button">Logout</button>
 		</a>
-		<a href="ShowDonor">
+		<a href="ShowDonor?userId=${userId}">
 			<button  id="donate-button">Donate</button>
 		</a>
 </nav>
 <section>
 	<div id="experience-form-block">
 		<h2>Share Experience of Donating Blood and Saving Lives</h2>
-		<form name="experienceForm" onsubmit="return validateExperienceForm()" method="post" action="Experience">
+		<form name="experienceForm" onsubmit="return validateExperienceForm()" method="post" action="Experience?userId=${userId}">
 			<div class="form-field-name">City</div>: <select name="city" onchange="populateHospitals(this.value)">
 									<option value=""/>
 									<c:forEach items="${cities}" var="city">

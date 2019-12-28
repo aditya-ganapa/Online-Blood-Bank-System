@@ -7,16 +7,19 @@
 	<title>Experience Notification</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<meta http-equiv="refresh" content="3; url = ShowExperience"/>
+	<meta http-equiv="refresh" content="3; url = ShowExperience?userId=${userId}"/>
 </head>
 <body>
 <nav>
-		<a href="home.jsp">
+		<a href="ShowDonor?userId=${userId}">
 			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
 		</a>
 		<div id="sitename">UPKAAR</div>
-		<a href="home.jsp">
+		<a href="ShowHome">
 			<button  id="logout-button">Logout</button>
+		</a>
+		<a href="ShowDonor?userId=${userId}">
+			<button  id="donate-button">Donate</button>
 		</a>
 </nav>
 <section>

@@ -357,3 +357,16 @@ function showQueryBlock() {
 	var raiseQueryButton = document.getElementById("raise-query-button");
 	raiseQueryButton.style.display = "none";
 }
+
+function hideCitiesAndBloodBanks() {
+	var allCities = document.getElementsByClassName("city");
+	for (var i = 0; i < allCities.length; i++) {
+		allCities[i].style.display = "none";
+	}
+	
+	document.getElementById("blood-banks-table-block").style.display = "none";
+}
+
+function showBloodBanks() {
+	document.getElementById("blood-banks-table-block").style.display = "";
+}

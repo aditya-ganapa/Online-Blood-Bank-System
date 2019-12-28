@@ -29,10 +29,12 @@ public class ShowLoginRegistrationServlet extends HttpServlet {
 		request.setAttribute("userExistsMessage", request.getAttribute("userExistsMessage"));
 		request.setAttribute("errorStatus", request.getAttribute("errorStatus"));
 		request.setAttribute("errorMessage", request.getAttribute("errorMessage"));
-		request.setAttribute("donorRegisteredStatus", request.getAttribute("donorRegisteredStatus"));
+/*		request.setAttribute("donorRegisteredStatus", request.getAttribute("donorRegisteredStatus"));
 		request.setAttribute("donorRegisteredMessage", request.getAttribute("donorRegisteredMessage"));
 		request.setAttribute("recipientRegisteredStatus", request.getAttribute("recipientRegisteredStatus"));
-		request.setAttribute("recipientRegisteredMessage", request.getAttribute("recipientRegisteredMessage"));
+		request.setAttribute("recipientRegisteredMessage", request.getAttribute("recipientRegisteredMessage"));*/
+		request.setAttribute("registeredStatus", request.getAttribute("registeredStatus"));
+		request.setAttribute("registeredMessage", request.getAttribute("registeredMessage"));
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-register.jsp");
 		requestDispatcher.forward(request, response);
 	}

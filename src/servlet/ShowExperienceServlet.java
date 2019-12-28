@@ -25,6 +25,14 @@ public class ShowExperienceServlet extends HttpServlet {
 		cities = locationDao.getAllCities();
 		request.setAttribute("locations", locations);
 		request.setAttribute("cities", cities);
+		
+		if (request.getParameter("userId") == null) {
+			request.setAttribute("userId", request.getAttribute("userId"));
+		}
+		else {
+			request.setAttribute("userId", request.getParameter("userId"));
+		}
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("experience.jsp");
 		requestDispatcher.forward(request, response);
 	}
