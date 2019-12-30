@@ -3,39 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<title>Insert title here</title>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Login Home</title>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-
 <body>
-
-
-
-	<nav> <a href="home.jsp"> <img src="images/blood_logo.jpg"
-		alt="logo" id="logo-img">
-
+<nav>
+	<a href="ShowLoginHome?userId=${userId}">
+		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
-
-	<div id="sitename">UPKAAR</div>
-
-	<a href="home.jsp">
-
+	<div id="sitename">
+		<img src="images/title.jpg" alt="title" id="title-img">
+	</div>
+	<a href="ShowHome">
 		<button id="logout-button">Logout</button>
-		</a>
- </nav>
-
-	<div class="image">
-
-		<h2 id="user_home">
-			Welcome to Upkaar.<br>We hope you are at the best of your Health
-		</h2>
-
-		<hr>
+	</a>
+	<a href="tips-on-donating.jsp">
+		<button id="tips-on-donating-button">Tips on Donating</button>
+	</a>
+	<a href="ShowFaq?userId=${userId}">
+		<button id="faq-button">FAQ</button>
+	</a>
+</nav>
+<div class="image">
+	<h2 id="user_home">
+		Welcome to Upkaar.<br>We hope you are at the best of your Health
+	</h2>
+	<hr>
 
 		<br>
 
@@ -51,16 +46,12 @@
 
 		<div>
 
-			<span>
-			<a href="ShowDonor?userId=${userId}">
-				<button type="button" id="home_label1">Save
-					A Life</button></a>
-			<a href="ShowRecipient?userId=${userId}">
-				<button type="button" id="home_label2">Available
-					Blood</button>
-			</a>
-			<a href="ShowExperience?userId=${userId}">
-				<button type="button" id="home_label3">FeedBack</button>
+			<span> <a href="ShowDonor?userId=${userId}">
+					<button type="button" id="home_label1">Save A Life</button>
+			</a> <a href="ShowRecipient?userId=${userId}">
+					<button type="button" id="home_label2">Available Blood</button>
+			</a> <a href="ShowExperience?userId=${userId}">
+					<button type="button" id="home_label3">FeedBack</button>
 			</a>
 			</span>
 
@@ -72,8 +63,8 @@
 
 <footer>
 
-<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a
-	Million Smiles.</p>
+	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create
+		a Million Smiles.</p>
 
 </footer>
 

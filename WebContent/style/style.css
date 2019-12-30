@@ -1,4 +1,255 @@
-#sitename{
+body {
+	margin: 0;
+	position: relative;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+nav {
+	height: 170px;
+	background-color: #ff4d4d;
+	overflow: hidden;
+}
+
+#logo-img {
+	height: 120px;
+	width: 180px;
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+#sitename {
+	display: inline-block;
+	margin-left: 470px;
+}
+
+#title-img {
+	margin-right: 45px;
+	height: 120px;
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 25px;
+}
+
+.left, .middle, .right {
+	box-sizing: border-box;
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+}
+
+.middle {
+	font-size: 22px;
+}
+
+#home-left-img {
+	width: 500px;
+	height: 750px;
+}
+
+#home-right-img {
+	width: 400px;
+	height: 400px;
+}
+
+#home-requirement-table-block {
+	box-sizing: border-box;
+	display: inline-block;
+	height:300px;
+	width:48%;
+	overflow:auto;
+	background-color:#f1f1f1;
+	scrollbar-base-color:gold;
+	padding:10px;
+	margin:10px;
+	font-size: 22px;
+}
+
+#home-experience-block {
+	box-sizing: border-box;
+	display: inline-block;
+	height:300px;
+	width:48%;
+	overflow:auto;
+	background-color:#f1f1f1;
+	scrollbar-base-color:gold;
+	padding:10px;
+	margin:10px;
+	font-size: 22px;
+}
+
+/* .grid-container {
+	display: grid;
+	grid-template-areas: 'header header header header header header'
+		'left middle middle middle middle right'
+		'footer footer footer footer footer footer';
+	grid-column-gap: 10px; - if you want gap between the columns
+	position: relative;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 750px;
+}
+
+.left, .middle, .right {
+	padding: 10px;
+}
+
+Style the left column
+.left {
+	grid-area: left;
+}
+
+Style the middle column
+.middle {
+	grid-area: middle;
+}
+
+Style the right column
+.right {
+	grid-area: right;
+} */
+
+#login-form-block, #registration-form-block {
+	content: '';
+	color: black;
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+	font-size: 25px;
+}
+
+.form-field-name {
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+}
+
+#login-register-button, #tips-on-donating-button, #faq-button,
+	#logout-button, #share-experience-button, #donate-button {
+	background-color: #ffffff;
+	color: #2e3493;
+	text-decoration: none;
+	padding: 10px 20px;
+	float: right;
+	margin-right: 25px;
+	margin-top: 90px;
+	border-radius: 5px;
+}
+
+#login-register-button:hover, #tips-on-donating-button:hover,
+	#faq-button:hover, #logout-button:hover, #share-experience-button:hover,
+	#donate-button:hover {
+	background-color: #ef3026;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#requirement-form-block, #availability-form-block,
+	#experience-form-block {
+	font-size: 25px;
+	text-align: center;
+}
+
+#requirement-table-block, #availability-list-block,
+	#no-availability-block {
+	margin-left: 60px;
+	font-size: 25px;
+}
+
+#availability-list-block, #no-availability-block {
+	text-align: center;
+}
+
+#requirement-table, #home-requirement-table {
+	width: 100%;
+	text-align: center;
+}
+
+th, td {
+	height: 30px;
+}
+
+footer {
+	background-color: #ff4d4d;
+	height: 50px;
+	position: relative;
+ 	left: 0;
+	right: 0;
+	bottom: 0; 
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+
+.notification-block {
+	margin-left: 60px;
+	font-size: 25px;
+}
+
+input, select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type=text], input[type=number], select, input[type=password],
+	input[type=email] {
+	width: 150px;
+}
+
+textarea {
+	width: 300px;
+	height: 150px;
+}
+
+input[type=submit], #post-button, #raise-query-button {
+	padding: 10px 20px;
+	border-radius: 5px;
+	border: 3px solid #ff4d4d;
+	background-color: white;
+	color: #ff4d4d;
+}
+
+input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
+	{
+	background-color: #ef3026;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#tips {
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+#faq {
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+#raise-query-button-block {
+	text-align: center;
+}
+
+#query-block {
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+}
+
+#query-textarea {
+	width: 100%;
+}
+
+/* background-color: #ef3026; red
+color: #ffffff; white
+background-color: #2e3493; blue
+background-color: #bfbfbf */
+
+/* #sitename{
 	display: inline-block;
 	font-size: 75px;
 	font-family: Corsiva, cursive;
@@ -13,7 +264,7 @@
     'header header header header header header' 
     'left middle middle middle middle right' 
     'footer footer footer footer footer footer';
-  /* grid-column-gap: 10px; - if you want gap between the columns */
+  grid-column-gap: 10px; - if you want gap between the columns
 } 
 
 .left,
@@ -21,17 +272,17 @@
   padding: 10px;
 }
 
-/* Style the left column */
+Style the left column
 .left {
   grid-area: left;
 }
 
-/* Style the middle column */
+Style the middle column
 .middle {
   grid-area: middle;
 }
 
-/* Style the right column */
+Style the right column
 .right {
   grid-area: right;
 }
@@ -228,4 +479,127 @@ background-color: #ef3026; red
 color: #ffffff; white
 background-color: #2e3493; blue
 background-color: #bfbfbf;
-background-color: #2e3493;
+background-color: #2e3493; */
+
+section {
+
+     height: 700px;
+
+     font-size: 23px;
+
+}
+
+ 
+
+label {
+
+     font-size: 23px;
+
+}
+
+ 
+
+.image {
+
+     background-image: url("background.jpg");
+
+
+     height: 750px;
+
+     background-repeat: no-repeat;
+
+     background-size: cover;
+
+     position: relative;
+
+}
+
+ 
+
+h1 {
+
+     text-align: center;
+
+}
+
+ 
+
+#user_home {
+
+     text-align: center;
+
+     color: #ff4d4d;
+
+}
+
+ 
+#home_label1 {
+
+     margin-left: 300px;
+
+     font-size: 20px;
+
+}
+
+ 
+
+#home_label2 {
+
+     margin-left: 400px;
+
+     font-size: 20px;
+
+}
+
+ 
+
+#home_label3 {
+
+     margin-left: 500px;
+
+     font-size: 20px;
+
+}
+
+ 
+
+span {
+
+     color: red;
+
+}
+
+
+button {
+
+     padding: 10px 20px;
+
+     border-radius: 5px;
+
+     border: 3px solid #ff4d4d;
+
+     background-color: white;
+
+     color: #ff4d4d;
+
+}
+
+ 
+
+button {
+
+     background-color: #ef3026;
+
+     color: #ffffff;
+
+     cursor: pointer;
+
+}
+
+ 
+
+#heading_donor {
+
+     color: red;
+
+}

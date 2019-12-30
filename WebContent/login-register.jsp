@@ -10,16 +10,18 @@
 </head>
 <body onload="hideCities()">
 <nav>
-		<a href="home.jsp">
-			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
-		</a>
-		<div id="sitename">UPKAAR</div>
-		<a href="tips-on-donating.jsp">
-			<button  id="tips-on-donating-button">Tips on Donating</button>
-		</a>
-		<a href="faq.jsp">
-			<button  id="faq-button">FAQ</button>
-		</a>
+	<a href="ShowHome">
+		<img src="images/logo.jpg" alt="logo" id="logo-img">
+	</a>
+	<div id="sitename">
+		<img src="images/title.jpg" alt="title" id="title-img">
+	</div>
+	<a href="tips-on-donating.jsp">
+		<button id="tips-on-donating-button">Tips on Donating</button>
+	</a>
+	<a href="ShowFaq">
+		<button id="faq-button">FAQ</button>
+	</a>
 </nav>
 <section>
 	<div id="registration-form-block">
@@ -50,7 +52,7 @@
 			<!-- <div class="form-field-name">User Type</div>: <input type="radio" name="userType" value="Donor"> Donor <input type="radio" name="userType" value="Recipient"> Recipient<br><br> -->
 			<input type="submit" name="submit" value="Register"><br><br>
 			<c:if test="${userExistsStatus}">${userExistsMessage}</c:if>
-<%-- 			<c:if test="${donorRegisteredStatus}">${donorRegisteredMessage}</c:if>
+<%-- 		<c:if test="${donorRegisteredStatus}">${donorRegisteredMessage}</c:if>
 			<c:if test="${recipientRegisteredStatus}">${recipientRegisteredMessage}</c:if> --%>
 			<c:if test="${registeredStatus}">${registeredMessage}</c:if>
 		</form>
@@ -62,7 +64,7 @@
 			Password<br><input type="password" name="password"><br><br>
 			<input type="submit" name="submit" value="Login"><br><br>
 			<c:if test="${errorStatus}">${errorMessage}</c:if>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</form>
 	</div>
 </section>
