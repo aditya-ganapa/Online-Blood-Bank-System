@@ -18,6 +18,7 @@
 		<button id="logout-button">Logout</button>
 	</a>
 </nav>
+<section>
 <div>
 	<h1 style="font-size: 30px; text-align: center; color: red;">
 		Doctor's Portal
@@ -36,6 +37,7 @@
 		<button id="Adminbutton">Update Requirement</button>
 	</a>
 </div>
+</section>
 <footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>

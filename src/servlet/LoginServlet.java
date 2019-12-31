@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		UserDao userDao = new UserDao();
 		if (userDao.validateUser(username, password)) {
-			if (username.equals("admin")) {
+			if (username.equals("doctor")) {
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-home.jsp");
 				requestDispatcher.forward(request, response);
 			}

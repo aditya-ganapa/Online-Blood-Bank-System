@@ -1,9 +1,12 @@
 body {
 	margin: 0;
-	/* position: relative; */
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+section {
+	min-height: 800px;
 }
 
 nav {
@@ -223,11 +226,13 @@ input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
 #tips {
 	margin-left: 60px;
 	margin-right: 60px;
+	font-size: 25px;
 }
 
 #faq {
 	margin-left: 60px;
 	margin-right: 60px;
+	font-size: 25px;
 }
 
 #raise-query-button-block {
@@ -242,6 +247,29 @@ input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
 
 #query-textarea {
 	width: 100%;
+}
+
+#query-answer-textarea {
+	width: 100%;
+}
+
+#my-queries-block {
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 25px;
+}
+
+#query-answer-block {
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+}
+
+#no-queries-block {
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+	font-size: 25px;
 }
 
 /* background-color: #ef3026; red
@@ -490,142 +518,81 @@ background-color: #2e3493; */
 }
  */
  
-
 label {
-
      font-size: 23px;
-
 }
 
- 
-
-.image {
-
+/* .image {
      background-image: url("background.jpg");
-
-
      height: 750px;
-
      background-repeat: no-repeat;
-
      background-size: cover;
-
      position: relative;
-
-}
-
- 
+} */
 
 h1 {
-
      text-align: center;
-
 }
-
- 
 
 #user_home {
-
      text-align: center;
-
      color: #ff4d4d;
-
 }
 
- 
-#home_label1 {
-
-     margin-left: 300px;
-
+#queryNotification {
+	text-align: center;
+     color: #ff4d4d;
      font-size: 20px;
-
 }
 
- 
+#home_label1 {
+     margin-left: 300px;
+     font-size: 20px;
+}
 
 #home_label2 {
-
      margin-left: 400px;
-
      font-size: 20px;
-
 }
-
- 
 
 #home_label3 {
-
      margin-left: 500px;
-
      font-size: 20px;
-
 }
-
- 
 
 span {
-
      color: red;
-
 }
 
 
 button {
-
      padding: 10px 20px;
-
      border-radius: 5px;
-
      border: 3px solid #ff4d4d;
-
      background-color: white;
-
      color: #ff4d4d;
-
 }
-
- 
 
 button {
-
      background-color: #ef3026;
-
      color: #ffffff;
-
      cursor: pointer;
-
 }
-
- 
 
 #heading_donor {
-
-     color: red;
-
+	color: red;
 }
 
 #Adminbutton{
-
-background-color: #ffffff;
-
-       border: 10px solid #ff4d4d;
-
-color:#ff4d4d;
-
-  padding: 60px 70px;
-
-  text-align: center;
-
-  text-decoration: none;
-
-  margin-top:90px;
-
-  margin-left:220px;
-
-  margin-right:40px;
-
-  display: inline-block;
-
-  font-size: 16px;
-
+	background-color: #ffffff;
+	border: 10px solid #ff4d4d;
+	color:#ff4d4d;
+	padding: 60px 70px;
+	text-align: center;
+	text-decoration: none;
+	margin-top:90px;
+	margin-left:220px;
+	margin-right:40px;
+	display: inline-block;
+	font-size: 16px;
 }

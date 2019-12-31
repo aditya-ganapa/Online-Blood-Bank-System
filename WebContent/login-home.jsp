@@ -29,12 +29,13 @@
 		<button id="my-queries-button">My Queries</button>
 	</a>
 </nav>
+<section>
 <div class="image">
 	<h2 id="user_home">Welcome to Upkaar.<br>We hope you are at the best of your Health</h2>
 	<hr>
 	<br>
 	<c:if test="${showNotificationStatus}">
-		<p>Your query has been answered. Click on 'My Queries' tab to to view the answer.</p>
+		<p id="queryNotification">Your query has been answered. Click on 'My Queries' tab to to view the answer.</p>
 	</c:if>
 	<div>
 		<span>
@@ -57,6 +58,7 @@
 		</span>
 	</div>
 </div>
+</section>
 <footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>

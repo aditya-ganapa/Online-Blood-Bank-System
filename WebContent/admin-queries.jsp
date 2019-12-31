@@ -27,7 +27,7 @@
 		<c:forEach items="${queries}" var="query">
 			<p>${query.question}</p>
 			<form method="post" action="QueryAnswer?queryId=${query.queryId}">
-				<textarea name="queryAnswer" class="query-textarea" required></textarea><br><br>
+				<textarea name="queryAnswer" id="query-answer-textarea" required></textarea><br><br>
 				<input type="submit" name="submit" value="Submit Answer"><br><br>
 			</form>
 		</c:forEach>
@@ -35,12 +35,13 @@
 </c:if>
 <c:if test="${noQueriesStatus}">
 	<div id="no-queries-block">
-		<h2>There are no queries to be answered.</h2>
+		<h2>Answer Queries</h2>
+		<p>There are no queries to be answered.</p>
 	</div>
 </c:if>
 </section>
 <footer>
-	<p>Copyright &copy; 2019</p>
+	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>
 </body>
 </html>

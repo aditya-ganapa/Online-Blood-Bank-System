@@ -30,14 +30,16 @@
 	</a>
 </nav>
 <section>
+<div id="my-queries-block">
 	<h2>My Queries</h2>
 	<c:if test="${noQueriesStatus}">You haven't raised any queries. To raise a query go to FAQ page and click on 'Raise A Query'.</c:if>
 	<c:if test="${queriesExistStatus}">
 		<c:forEach items="${queries}" var="query">
-		<p>${query.question}</p><br>
-		<p>${query.answer}</p><br>
+		<p>Q) ${query.question}</p>
+		<p>A) ${query.answer}</p><br>
 		</c:forEach>
 	</c:if>
+</div>
 </section>
 <footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
