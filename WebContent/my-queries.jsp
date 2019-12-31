@@ -35,7 +35,7 @@
 	<c:if test="${noQueriesStatus}">You haven't raised any queries. To raise a query go to FAQ page and click on 'Raise A Query'.</c:if>
 	<c:if test="${queriesExistStatus}">
 		<c:forEach items="${queries}" var="query">
-		<p>Q) ${query.question}</p>
+		<p><b>Q) ${query.question}</b></p>
 		<p>A) ${query.answer}</p><br>
 		</c:forEach>
 	</c:if>

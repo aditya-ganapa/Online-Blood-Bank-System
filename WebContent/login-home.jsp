@@ -35,7 +35,7 @@
 	<hr>
 	<br>
 	<c:if test="${showNotificationStatus}">
-		<p id="queryNotification">Your query has been answered. Click on 'My Queries' tab to to view the answer.</p>
+		<p id="query-notification">Your query has been answered. Click on 'My Queries' tab to to view the answer.</p>
 	</c:if>
 	<div>
 		<span>

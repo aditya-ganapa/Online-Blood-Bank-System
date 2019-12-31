@@ -1,10 +1,13 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Admin Home</title>
+	<title>Slot Update Notification</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<meta http-equiv="refresh" content="3; url = ShowAdminUpdateSlots"/>
 </head>
 <body>
 <nav>
@@ -19,21 +22,13 @@
 	</a>
 </nav>
 <section>
-<div id="admin-home-block">
-	<h1>Doctor's Portal</h1>
-	<a href="ShowAdminUpdateSlots">
-		<button id="Adminbutton">Update Available Slot</button>
-	</a>
-	<a href="ShowAdminQueries">
-		<button id="Adminbutton">Respond Query</button>
-	</a>
-	<a href="Admin-Update-Requirement.jsp">
-		<button id="Adminbutton">Update Requirement</button>
-	</a>
-</div>
+	<div class="notification-block">
+	<h2>Slot Update Status</h2>
+	<p>The slot has been updated successfully.</p>
+	</div>
 </section>
 <footer>
-	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
+	<p>Copyright &copy; 2019</p>
 </footer>
 </body>
 </html>
