@@ -20,17 +20,23 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		UserDao userDao = new UserDao();
 		if (userDao.validateUser(username, password)) {
-			request.setAttribute("userId", userDao.getUserId(username));
-			/*if(!userDao.getUserType(username)) {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowDonor");
+			if (username.equals("admin")) {
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin-home.jsp");
 				requestDispatcher.forward(request, response);
 			}
 			else {
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowRecipient");
+				request.setAttribute("userId", userDao.getUserId(username));
+				/*if(!userDao.getUserType(username)) {
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowDonor");
+					requestDispatcher.forward(request, response);
+				}
+				else {
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowRecipient");
+					requestDispatcher.forward(request, response);
+				}*/
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowLoginHome");
 				requestDispatcher.forward(request, response);
-			}*/
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-home.jsp");
-			requestDispatcher.forward(request, response);
+			}
 		}
 		else {
 			request.setAttribute("errorStatus", true);

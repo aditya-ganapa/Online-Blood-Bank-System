@@ -481,14 +481,14 @@ background-color: #2e3493; blue
 background-color: #bfbfbf;
 background-color: #2e3493; */
 
-section {
+/* section {
 
      height: 700px;
 
      font-size: 23px;
 
 }
-
+ */
  
 
 label {
@@ -601,5 +601,31 @@ button {
 #heading_donor {
 
      color: red;
+
+}
+
+#Adminbutton{
+
+background-color: #ffffff;
+
+       border: 10px solid #ff4d4d;
+
+color:#ff4d4d;
+
+  padding: 60px 70px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  margin-top:90px;
+
+  margin-left:220px;
+
+  margin-right:40px;
+
+  display: inline-block;
+
+  font-size: 16px;
 
 }

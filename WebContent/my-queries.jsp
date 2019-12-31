@@ -3,11 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Query Notification</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>My Queries</title>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<meta http-equiv="refresh" content="3; url = ShowFaq?userId=${userId}"/>
 </head>
 <body>
 <nav>
@@ -31,10 +30,14 @@
 	</a>
 </nav>
 <section>
-	<div class="notification-block">
-	<h2>Query Posting Status</h2>
-	<p>Your query has been posted successfully. You will be notified when it is answered.</p>
-	</div>
+	<h2>My Queries</h2>
+	<c:if test="${noQueriesStatus}">You haven't raised any queries. To raise a query go to FAQ page and click on 'Raise A Query'.</c:if>
+	<c:if test="${queriesExistStatus}">
+		<c:forEach items="${queries}" var="query">
+		<p>${query.question}</p><br>
+		<p>${query.answer}</p><br>
+		</c:forEach>
+	</c:if>
 </section>
 <footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>

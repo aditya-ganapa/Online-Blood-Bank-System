@@ -77,15 +77,17 @@ AB Rh-positive ---  4 percent <br>
 AB Rh-negative --- 1 percent</p>
 <p>In an emergency, anyone can receive type O red blood cells. Therefore, people with type O blood are known as "universal blood donors." In addition, individuals with AB type plasma are the universal plasma donors.</p>
 </div>
+<c:if test="${signedInStatus}">
 <div id="raise-query-button-block">
 	<button id="raise-query-button" onclick="showQueryBlock()">Raise A Query</button>
 </div>
 <div id="query-block">
-	<form name="queryForm" onsubmit="return validateQueryForm()" method="post" action="Query">
+	<form name="queryForm" onsubmit="return validateQueryForm()" method="post" action="Query?userId=${userId}">
 		<textarea name="query" id="query-textarea"></textarea><br><br>
 		<input type="submit" name="submit" value="Submit Query"><br><br>
 	</form>
 </div>
+</c:if>
 </section>
 <footer>
 	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
