@@ -10,16 +10,24 @@
 </head>
 <body onload="hideCitiesAndBloodBanks()">
 <nav>
-		<a href="ShowDonor?userId=${userId}">
-			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
-		</a>
-		<div id="sitename">UPKAAR</div>
-		<a href="ShowHome">
-			<button  id="logout-button">Logout</button>
-		</a>
-		<a href="ShowExperience?userId=${userId}">
-			<button  id="share-experience-button">Share Experience</button>
-		</a>
+	<a href="ShowLoginHome?userId=${userId}">
+		<img src="images/logo.jpg" alt="logo" id="logo-img">
+	</a>
+	<div id="sitename">
+		<img src="images/title.jpg" alt="title" id="title-img">
+	</div>
+	<a href="ShowHome">
+		<button id="logout-button">Logout</button>
+	</a>
+	<a href="ShowTipsOnDonating?userId=${userId}">
+		<button id="tips-on-donating-button">Tips on Donating</button>
+	</a>
+	<a href="ShowFaq?userId=${userId}">
+		<button id="faq-button">FAQ</button>
+	</a>
+	<a href="ShowMyQueries?userId=${userId}">
+		<button id="my-queries-button">My Queries</button>
+	</a>
 </nav>
 <section>
 	<div id="requirement-form-block">

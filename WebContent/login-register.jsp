@@ -16,7 +16,7 @@
 	<div id="sitename">
 		<img src="images/title.jpg" alt="title" id="title-img">
 	</div>
-	<a href="tips-on-donating.jsp">
+	<a href="ShowTipsOnDonating">
 		<button id="tips-on-donating-button">Tips on Donating</button>
 	</a>
 	<a href="ShowFaq">

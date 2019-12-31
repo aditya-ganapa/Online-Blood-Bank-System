@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	position: relative;
+	/* position: relative; */
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -21,7 +21,7 @@ nav {
 
 #sitename {
 	display: inline-block;
-	margin-left: 470px;
+	margin-left: 60px;
 }
 
 #title-img {
@@ -57,26 +57,26 @@ nav {
 #home-requirement-table-block {
 	box-sizing: border-box;
 	display: inline-block;
-	height:300px;
-	width:48%;
-	overflow:auto;
-	background-color:#f1f1f1;
-	scrollbar-base-color:gold;
-	padding:10px;
-	margin:10px;
+	height: 300px;
+	width: 48%;
+	overflow: auto;
+	background-color: #f1f1f1;
+	scrollbar-base-color: gold;
+	padding: 10px;
+	margin: 10px;
 	font-size: 22px;
 }
 
 #home-experience-block {
 	box-sizing: border-box;
 	display: inline-block;
-	height:300px;
-	width:48%;
-	overflow:auto;
-	background-color:#f1f1f1;
-	scrollbar-base-color:gold;
-	padding:10px;
-	margin:10px;
+	height: 300px;
+	width: 48%;
+	overflow: auto;
+	background-color: #f1f1f1;
+	scrollbar-base-color: gold;
+	padding: 10px;
+	margin: 10px;
 	font-size: 22px;
 }
 
@@ -128,7 +128,7 @@ Style the right column
 }
 
 #login-register-button, #tips-on-donating-button, #faq-button,
-	#logout-button, #share-experience-button, #donate-button {
+	#logout-button, #share-experience-button, #donate-button, #my-queries-button {
 	background-color: #ffffff;
 	color: #2e3493;
 	text-decoration: none;
@@ -141,7 +141,7 @@ Style the right column
 
 #login-register-button:hover, #tips-on-donating-button:hover,
 	#faq-button:hover, #logout-button:hover, #share-experience-button:hover,
-	#donate-button:hover {
+	#donate-button:hover, #my-queries-button:hover {
 	background-color: #ef3026;
 	color: #ffffff;
 	cursor: pointer;

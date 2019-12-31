@@ -1,26 +1,46 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Tips On Donating</title>
-	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
 <nav>
-		<a href="home.jsp">
-			<img src="images/blood_logo.jpg" alt="logo" id="logo-img">
-		</a>
-		<div id="sitename">UPKAAR</div>
-		<a href="ShowLoginRegistration">
-			<button  id="login-register-button">Login | Register</button>
-		</a>
-		<a href="tips-on-donating.jsp">
-			<button  id="tips-on-donating-button">Tips on Donating</button>
-		</a>
-		<a href="faq.jsp">
-			<button  id="faq-button">FAQ</button>
-		</a>
+<c:if test="${notSignedInStatus}">
+	<a href="ShowHome">
+		<img src="images/logo.jpg" alt="logo" id="logo-img">
+	</a>
+	<div id="sitename">
+		<img src="images/title.jpg" alt="title" id="title-img">
+	</div>
+	<a href="ShowLoginRegistration">
+		<button  id="login-register-button">Login | Register</button>
+	</a>
+	<a href="ShowFaq">
+		<button  id="faq-button">FAQ</button>
+	</a>
+</c:if>
+<c:if test="${signedInStatus}">
+	<a href="ShowLoginHome?userId=${userId}">
+		<img src="images/logo.jpg" alt="logo" id="logo-img">
+	</a>
+	<div id="sitename">
+		<img src="images/title.jpg" alt="title" id="title-img">
+	</div>
+	<a href="ShowHome">
+		<button id="logout-button">Logout</button>
+	</a>
+	<a href="ShowFaq?userId=${userId}">
+		<button id="faq-button">FAQ</button>
+	</a>
+	<a href="ShowMyQueries?userId=${userId}">
+		<button id="my-queries-button">My Queries</button>
+	</a>
+</c:if>
 </nav>
 <section>
 <div id="tips">

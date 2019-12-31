@@ -19,7 +19,7 @@
 	<a href="ShowLoginRegistration">
 		<button id="login-register-button">Login | Register</button>
 	 </a>
-	<a href="tips-on-donating.jsp">
+	<a href="ShowTipsOnDonating">
 		<button id="tips-on-donating-button">Tips on Donating</button>
 	</a>
 	<a href="ShowFaq">

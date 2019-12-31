@@ -19,55 +19,46 @@
 	<a href="ShowHome">
 		<button id="logout-button">Logout</button>
 	</a>
-	<a href="tips-on-donating.jsp">
+	<a href="ShowTipsOnDonating?userId=${userId}">
 		<button id="tips-on-donating-button">Tips on Donating</button>
 	</a>
 	<a href="ShowFaq?userId=${userId}">
 		<button id="faq-button">FAQ</button>
 	</a>
+	<a href="ShowMyQueries?userId=${userId}">
+		<button id="my-queries-button">My Queries</button>
+	</a>
 </nav>
 <div class="image">
-	<h2 id="user_home">
-		Welcome to Upkaar.<br>We hope you are at the best of your Health
-	</h2>
+	<h2 id="user_home">Welcome to Upkaar.<br>We hope you are at the best of your Health</h2>
 	<hr>
-
-		<br>
-
-		<div>
-
-			<span> <label id="home_label1">Donate Blood</label> <label
-				id="home_label2">Check Blood Availability</label> <label
-				id="home_label3">Share your Experience</label>
-
-			</span>
-
-		</div>
-
-		<div>
-
-			<span> <a href="ShowDonor?userId=${userId}">
-					<button type="button" id="home_label1">Save A Life</button>
-			</a> <a href="ShowRecipient?userId=${userId}">
-					<button type="button" id="home_label2">Available Blood</button>
-			</a> <a href="ShowExperience?userId=${userId}">
-					<button type="button" id="home_label3">FeedBack</button>
-			</a>
-			</span>
-
-		</div>
-
+	<br>
+	<c:if test="${showNotificationStatus}">
+		<p>Your query has been answered. Click on 'My Queries' tab to to view the answer.</p>
+	</c:if>
+	<div>
+		<span>
+			<label id="home_label1">Donate Blood</label>
+			<label id="home_label2">Check Blood Availability</label>
+			<label id="home_label3">Share your Experience</label>
+		</span>
 	</div>
-
-</body>
-
+	<div>
+		<span>
+			<a href="ShowDonor?userId=${userId}">
+				<button type="button" id="home_label1">Save A Life</button>
+			</a>
+			<a href="ShowRecipient?userId=${userId}">
+				<button type="button" id="home_label2">Available Blood</button>
+			</a>
+			<a href="ShowExperience?userId=${userId}">
+				<button type="button" id="home_label3">FeedBack</button>
+			</a>
+		</span>
+	</div>
+</div>
 <footer>
-
-	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create
-		a Million Smiles.</p>
-
+	<p>A Single Pint Can Save Three Lives; A Single Gesture Can Create a Million Smiles.</p>
 </footer>
-
-
-
+</body>
 </html>
