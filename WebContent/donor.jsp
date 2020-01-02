@@ -9,7 +9,18 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body onload="hideCitiesAndBloodBanks()">
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
 <nav>
+	<a href="ShowLoginHome?userId=${userId}">Home</a>
+	<a href="ShowMyQueries?userId=${userId}">My Queries</a>
+	<a href="ShowTipsOnDonating?userId=${userId}">Tips on Donating</a>
+	<a href="ShowFaq?userId=${userId}">FAQ</a>
+	<a href="ShowHome">Logout</a>
+</nav>
+<%-- <nav>
 	<a href="ShowLoginHome?userId=${userId}">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
@@ -28,7 +39,7 @@
 	<a href="ShowMyQueries?userId=${userId}">
 		<button id="my-queries-button">My Queries</button>
 	</a>
-</nav>
+</nav> --%>
 <section>
 	<div id="requirement-form-block">
 		<h2>Saving A Life</h2>
@@ -53,7 +64,7 @@
 	</div>
 	<c:if test="${requirementsStatus}">
 	<div id="requirement-table-block">
-		<h3>Requirements For Your Blood Type In Your Area:</h3>
+		<h3>Requirements For Your Blood Type In Your Area</h3>
 		<table id="requirement-table">
 			<tr>
 				<th>Hospital</th>
@@ -84,7 +95,7 @@
 		<button  id="show-all-blood-banks-button" onclick="showBloodBanks()">OK</button>
 	</div>
 	<div id="blood-banks-table-block">
-		<h3>Blood Banks In Your Area:</h3>
+		<h3>Blood Banks In Your Area</h3>
 		<table id="blood-banks-table">
 			<tr>
 				<th>Hospital</th>

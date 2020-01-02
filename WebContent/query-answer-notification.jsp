@@ -10,7 +10,15 @@
 	<meta http-equiv="refresh" content="3; url = ShowAdminQueries"/>
 </head>
 <body>
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
 <nav>
+	<a href="admin-home.jsp">Home</a>
+	<a href="ShowHome">Logout</a>
+</nav>
+<!-- <nav>
 	<a href="admin-home.jsp">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
@@ -20,7 +28,7 @@
 	<a href="ShowHome">
 		<button id="logout-button">Logout</button>
 	</a>
-</nav>
+</nav> -->
 <section>
 	<div class="notification-block">
 	<h2>Query Answer Status</h2>

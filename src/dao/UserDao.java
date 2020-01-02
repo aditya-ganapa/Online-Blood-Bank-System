@@ -19,7 +19,7 @@ public class UserDao {
 			if (resultSet.getInt(1) != 0) {
 				throw new DuplicateAccountException();
 			}
-			preparedStatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?)");
+			preparedStatement = connection.prepareStatement("insert into user(us_first_name,us_last_name,us_age,us_gender,us_contact_number,us_email,us_password,us_weight,us_state,us_city,us_pin_code,us_blood_group) values(?,?,?,?,?,?,?,?,?,?,?,?)");
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
 			preparedStatement.setInt(3, user.getAge());

@@ -9,7 +9,60 @@ section {
 	min-height: 800px;
 }
 
+header {
+	height: 100px;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+#logo-img {
+	height: 100px;
+	width: 150px;
+	float: left;
+}
+
+#title-img {
+	height: 100px;
+	margin-left: 31%
+}
+
 nav {
+	background-color: #333;
+	text-align: center;
+	overflow: hidden;
+	font-size: 17px;
+	position: sticky;
+	top: 0;
+}
+
+nav a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #ff4d4d;
+}
+
+.middle {
+	font-size: 22px;
+	box-sizing: border-box;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #333;
+  margin-top: 20px;
+  font-size: 17px;
+  color: #f2f2f2;
+}
+/* nav {
 	height: 170px;
 	background-color: #ff4d4d;
 	overflow: hidden;
@@ -34,8 +87,8 @@ nav {
 	margin-left: auto;
 	margin-right: auto;
 	padding-right: 25px;
-}
-
+} */
+/* 
 .left, .middle, .right {
 	box-sizing: border-box;
 	width: 33%;
@@ -55,31 +108,30 @@ nav {
 #home-right-img {
 	width: 400px;
 	height: 400px;
-}
+} */
 
 #home-requirement-table-block {
 	box-sizing: border-box;
 	display: inline-block;
-	height: 300px;
+	height: 400px;
 	width: 48%;
 	overflow: auto;
 	background-color: #f1f1f1;
 	scrollbar-base-color: gold;
 	padding: 10px;
-	margin: 10px;
+	margin: 20px 10px 10px 20px;
 	font-size: 22px;
 }
 
 #home-experience-block {
 	box-sizing: border-box;
 	display: inline-block;
-	height: 300px;
+	height: 400px;
 	width: 48%;
 	overflow: auto;
 	background-color: #f1f1f1;
-	scrollbar-base-color: gold;
 	padding: 10px;
-	margin: 10px;
+	margin: 20px 20px 10px 10px;
 	font-size: 22px;
 }
 
@@ -121,7 +173,7 @@ Style the right column
 	display: inline-block;
 	width: 49%;
 	text-align: center;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 .form-field-name {
@@ -152,14 +204,14 @@ Style the right column
 
 #requirement-form-block, #availability-form-block,
 	#experience-form-block, #slot-update-form-block {
-	font-size: 25px;
+	font-size: 22px;
 	text-align: center;
 }
 
 #requirement-table-block, #availability-list-block,
 	#no-availability-block {
-	margin-left: 60px;
-	font-size: 25px;
+	text-align: center;
+	font-size: 22px;
 }
 
 #availability-list-block, #no-availability-block {
@@ -169,13 +221,32 @@ Style the right column
 #requirement-table, #home-requirement-table {
 	width: 100%;
 	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#no-requirements-button-block {
+	text-align: center;
+	font-size: 22px;
+}
+
+#blood-banks-table-block {
+	text-align: center;
+	font-size: 22px;
+}
+
+#blood-banks-table {
+	width: 100%;
+	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 th, td {
 	height: 30px;
 }
 
-footer {
+/* footer {
 	background-color: #ff4d4d;
 	height: 50px;
 	position: relative;
@@ -185,11 +256,11 @@ footer {
 	text-align: center;
 	color: white;
 	font-size: 20px;
-}
+} */
 
 .notification-block {
-	margin-left: 60px;
-	font-size: 25px;
+	text-align: center;
+	font-size: 22px;
 }
 
 input, select {
@@ -199,7 +270,7 @@ input, select {
 }
 
 input[type=text], input[type=number], select, input[type=password],
-	input[type=email] {
+	input[type=email], input[type=date] {
 	width: 150px;
 }
 
@@ -208,7 +279,7 @@ textarea {
 	height: 150px;
 }
 
-input[type=submit], #post-button, #raise-query-button {
+input[type=submit], #post-button, #raise-query-button, #show-all-blood-banks-button {
 	padding: 10px 20px;
 	border-radius: 5px;
 	border: 3px solid #ff4d4d;
@@ -216,7 +287,7 @@ input[type=submit], #post-button, #raise-query-button {
 	color: #ff4d4d;
 }
 
-input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
+input[type=submit]:hover, #post-button:hover, #raise-query-button:hover #show-all-blood-banks-button:hover
 	{
 	background-color: #ef3026;
 	color: #ffffff;
@@ -224,15 +295,15 @@ input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
 }
 
 #tips {
-	margin-left: 60px;
-	margin-right: 60px;
-	font-size: 25px;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 22px;
 }
 
 #faq {
-	margin-left: 60px;
-	margin-right: 60px;
-	font-size: 25px;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 22px;
 }
 
 #raise-query-button-block {
@@ -253,23 +324,38 @@ input[type=submit]:hover, #post-button:hover, #raise-query-button:hover
 	width: 100%;
 }
 
-#my-queries-block {
-	margin-left: 10%;
-	margin-right: 10%;
-	font-size: 25px;
-}
+
 
 #query-answer-block {
 	margin-left: 20%;
 	margin-right: 20%;
 	text-align: center;
+	font-size: 22px;
 }
 
 #no-queries-block {
 	margin-left: 20%;
 	margin-right: 20%;
 	text-align: center;
-	font-size: 25px;
+	font-size: 22px;
+}
+
+#update-requirements-block {
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 22px;
+	text-align: center;
+}
+
+#update-requirements-table {
+	width: 100%;
+}
+
+#no-requirements-block {
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 22px;
+	text-align: center;
 }
 
 /* background-color: #ef3026; red
@@ -519,7 +605,7 @@ background-color: #2e3493; */
  */
  
 label {
-     font-size: 23px;
+     font-size: 22px;
 }
 
 /* .image {
@@ -537,15 +623,16 @@ h1 {
 #user_home {
      text-align: center;
      color: #ff4d4d;
+     font-size: 22px;
 }
 
 #query-notification {
 	text-align: center;
      color: #ff4d4d;
-     font-size: 20px;
+     font-size: 22px;
 }
 
-#home_label1 {
+/* #home_label1 {
      margin-left: 300px;
      font-size: 20px;
 }
@@ -562,6 +649,18 @@ h1 {
 
 span {
      color: red;
+} */
+
+#login-home-button-block {
+	text-align: center;
+}
+
+.login-home-button {
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+	font-size: 22px;
+	color: #ff4d4d;
 }
 
 button, #Adminbutton {
@@ -589,5 +688,50 @@ button:hover, #Adminbutton:hover {
 	margin-left:220px;
 	margin-right:40px;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 22px;
+}
+
+#password-strength {
+	font-size: 17px;
+}
+
+#admin-home-title {
+	text-align: center;
+     color: #ff4d4d;
+}
+
+#admin-home-button-block {
+	text-align: center;
+}
+
+.admin-home-button {
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+	font-size: 20px;
+	color: #ff4d4d;
+}
+
+.slot-checkbox {
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+	font-size: 18px;
+}
+
+#query-answer-question-block {
+	text-align: left;
+}
+
+#my-queries-block {
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 22px;
+	text-align: center;
+	word-wrap: break-word;
+}
+
+#my-queries-question-answer-block {
+	text-align: left;
+	word-wrap: break-word;
 }

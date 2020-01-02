@@ -9,7 +9,17 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
 <nav>
+	<a href="ShowHome">Home</a>
+	<a href="ShowTipsOnDonating">Tips on Donating</a>
+	<a href="ShowFaq">FAQ</a>
+	<a href="ShowLoginRegistration">Login | Register</a>
+</nav>
+<!-- <nav>
 	<a href="ShowHome">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
@@ -25,11 +35,11 @@
 	<a href="ShowFaq">
 		<button id="faq-button">FAQ</button>
 	</a>
-</nav>
+</nav> -->
 <section>
-	<div class="left">
+<!-- 	<div class="left">
 		<img src="images/home-left.jpg" alt="home-left" id="home-left-img">
-	</div>
+	</div> -->
 	<div class="middle">
 			<h2>Why Should We Donate Blood?</h2>
 			Safe Blood Saves Lives And Improves Health. Blood Transfusion Is Needed For:
@@ -46,9 +56,9 @@
 			Blood is the most precious gift that anyone can give to another person - The Gift of Life. A decision to donate your blood can save a life, or even several if your blood is separated into its components - Red Cells, Platelets and Plasma - which can be used individually for patients with specific conditions.
 
 	</div>
-	<div class="right">
+<!-- 	<div class="right">
 		<img src="images/home-right.jpg" alt="home-right" id="home-right-img"><br><br><br><br><br><br><br><br><br><br>
-	</div>
+	</div> -->
 	<c:if test="${requirementsStatus}">
 		<div id="home-requirement-table-block">
 			<h3>Requirements</h3>

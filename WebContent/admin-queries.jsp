@@ -9,7 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
 <nav>
+	<a href="admin-home.jsp">Home</a>
+	<a href="ShowHome">Logout</a>
+</nav>
+<!-- <nav>
 	<a href="admin-home.jsp">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
@@ -19,15 +27,15 @@
 	<a href="ShowHome">
 		<button id="logout-button">Logout</button>
 	</a>
-</nav>
+</nav> -->
 <section>
 <c:if test="${queriesStatus}">
 	<div id="query-answer-block">
 		<h2>Answer Queries</h2>
 		<c:forEach items="${queries}" var="query">
-			<p>${query.question}</p>
+			<div id="query-answer-question-block"><p><b>Q) ${query.question}</b></p></div>
 			<form method="post" action="QueryAnswer?queryId=${query.queryId}">
-				<textarea name="queryAnswer" id="query-answer-textarea" required></textarea><br><br>
+				<textarea name="queryAnswer" id="query-answer-textarea" maxlength="144" required></textarea><br><br>
 				<input type="submit" name="submit" value="Submit Answer"><br><br>
 			</form>
 		</c:forEach>

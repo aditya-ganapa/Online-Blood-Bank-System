@@ -9,7 +9,28 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body onload="hideQueryBlock()">
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
+<c:if test="${notSignedInStatus}">
 <nav>
+	<a href="ShowHome">Home</a>
+	<a href="ShowTipsOnDonating">Tips on Donating</a>
+	<a href="ShowFaq">FAQ</a>
+	<a href="ShowLoginRegistration">Login | Register</a>
+</nav>
+</c:if>
+<c:if test="${signedInStatus}">
+<nav>
+	<a href="ShowLoginHome?userId=${userId}">Home</a>
+	<a href="ShowMyQueries?userId=${userId}">My Queries</a>
+	<a href="ShowTipsOnDonating?userId=${userId}">Tips on Donating</a>
+	<a href="ShowFaq?userId=${userId}">FAQ</a>
+	<a href="ShowHome">Logout</a>
+</nav>
+</c:if>
+<%-- <nav>
 <c:if test="${notSignedInStatus}">
 	<a href="ShowHome">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
@@ -41,7 +62,7 @@
 		<button id="my-queries-button">My Queries</button>
 	</a>
 </c:if>
-</nav>
+</nav> --%>
 <section>
 <div id="faq">
 <h2>What are the minimum requirements to become a blood donor?</h2>

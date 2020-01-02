@@ -101,7 +101,7 @@ function validateRegistrationForm() {
 	} else if ((lastName.value.length) < 2 || (lastName.value.length) > 50) {
 		alert("Name Should Have 2 To 50 Characters.");
 		return false;
-	} else if ((age.value.length) > 3 || (age.value <= 0)) {
+	} else if ((age.value.length) > 3 || (age.value <= 0) || (age.value > 130)) {
 		alert("Please Enter Valid Age.");
 		return false;
 	} else if (isNaN(contactNumber.value)) {
@@ -283,7 +283,6 @@ function validateAvailabilityForm() {
 	var city = document.forms["availabilityForm"]["city"];
 	var pinCode = document.forms["availabilityForm"]["pinCode"];
 	var bloodGroup = document.forms["availabilityForm"]["bloodGroup"];
-	var contactNumber = document.forms["availabilityForm"]["contactNumber"];
 	var empty = false;
 	if (state.value == "") {
 		state.style.border = "1px solid #ef3026";
@@ -309,24 +308,12 @@ function validateAvailabilityForm() {
 	} else {
 		bloodGroup.style.border = "";
 	}
-	if (contactNumber.value == "") {
-		contactNumber.style.border = "1px solid #ef3026";
-		empty = true;
-	} else {
-		contactNumber.style.border = "";
-	}
 	if (empty) {
 		alert("Please update the highlighted mandatory field(s).");
 		return false;
 	}
 	if((pinCode.value.length != 6) || (pinCode.value < 0)) {
 		alert("Please enter valid pin code.");
-		return false;
-	} else if (isNaN(contactNumber.value)) {
-		alert("Please enter valid contact number.");
-		return false;
-	} else if (!(contactNumber.value.length == 10)) {
-		alert("Please enter valid contact number.");
 		return false;
 	} else {
 		return true;
@@ -335,6 +322,19 @@ function validateAvailabilityForm() {
 
 function validateQueryForm() {
 	var query = document.forms["queryForm"]["query"];
+	if (query.value == "") {
+		alert("You haven't entered any query.");
+		return false;
+	} else if (query.value.length > 144) {
+		alert("Query can't be more than 144 characters long.");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function validateQueryAnswerForm() {
+	var query = document.forms["queryForm"]["queryAnswer"];
 	if (query.value == "") {
 		alert("You haven't entered any query.");
 		return false;
@@ -369,4 +369,93 @@ function hideCitiesAndBloodBanks() {
 
 function showBloodBanks() {
 	document.getElementById("blood-banks-table-block").style.display = "";
+}
+
+function checkPasswordStrength(password) {
+    var passwordStrength = document.getElementById("password-strength");
+    // TextBox left blank.
+    if (password.length == 0) {
+         passwordStrength.innerHTML = "";
+         return;
+    }
+    // Regular Expressions.
+    var regex = new Array();
+    regex.push("[A-Z]"); // Uppercase Alphabet.
+    regex.push("[a-z]"); // Lowercase Alphabet.
+    regex.push("[0-9]"); // Digit.
+    regex.push("[$@$!%*#?&]"); // Special Character.
+    var passed = 0;
+    // Validate for each Regular Expression.
+    for (var i = 0; i < regex.length; i++) {
+         if (new RegExp(regex[i]).test(password)) {
+             passed++;
+         }
+    }
+    // Validate for length of Password.
+    if (passed > 2 && password.length > 8) {
+         passed++;
+    }
+    // Display status.
+    var color = "";
+    var strength = "";
+    switch (passed) {
+    case 0:
+    case 1:
+         strength = "Weak";
+         color = "red";
+         break;
+    case 2:
+         strength = "Good";
+         color = "darkorange";
+         break;
+    case 3:
+    case 4:
+         strength = "Strong";
+         color = "green";
+         break;
+    case 5:
+         strength = "Very Strong";
+         color = "darkgreen";
+         break;
+    }
+    passwordStrength.innerHTML = strength;
+    passwordStrength.style.color = color;
+}
+
+function validateSlotUpdateForm() {
+	var city = document.forms["slotUpdateForm"]["city"];
+	var hospital = document.forms["slotUpdateForm"]["hospital"];
+	var date = document.forms["slotUpdateForm"]["date"];
+	var empty = false;
+	var currentDate = new Date();
+    var selectedDate = new Date(date.value);
+	if (city.value == "") {
+		city.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		city.style.border = "";
+	}
+	if (hospital.value == "") {
+		hospital.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		hospital.style.border = "";
+	}
+	if (date.value == "") {
+		date.style.border = "1px solid #ef3026";
+		empty = true;
+	} else {
+		date.style.border = "";
+	}
+	if (empty) {
+		alert("Please update the highlighted mandatory field(s).");
+		return false;
+	}
+	if (selectedDate < currentDate) {
+		alert("Date should be greater than current date");
+			return false;
+	}
+    else {
+    	return true;
+    }
 }

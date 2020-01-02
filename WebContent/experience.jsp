@@ -9,7 +9,18 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body onload="hideHospitals()">
+<header>
+	<img src="images/logo.jpg" alt="logo" id="logo-img">
+	<img src="images/title.jpg" alt="title" id="title-img">
+</header>
 <nav>
+	<a href="ShowLoginHome?userId=${userId}">Home</a>
+	<a href="ShowMyQueries?userId=${userId}">My Queries</a>
+	<a href="ShowTipsOnDonating?userId=${userId}">Tips on Donating</a>
+	<a href="ShowFaq?userId=${userId}">FAQ</a>
+	<a href="ShowHome">Logout</a>
+</nav>
+<%-- <nav>
 	<a href="ShowLoginHome?userId=${userId}">
 		<img src="images/logo.jpg" alt="logo" id="logo-img">
 	</a>
@@ -28,7 +39,7 @@
 	<a href="ShowMyQueries?userId=${userId}">
 		<button id="my-queries-button">My Queries</button>
 	</a>
-</nav>
+</nav> --%>
 <section>
 	<div id="experience-form-block">
 		<h2>Share Experience of Donating Blood and Saving Lives</h2>
